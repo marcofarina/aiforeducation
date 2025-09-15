@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capitolo 1 — Cos'è l'Intelligenza Artificiale?</title>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Definizioni generali, coordinate storiche, tipologie principali, funzionamento di base, punti di forza e limiti, quadro istituzionale e cenni sui modelli linguistici." />
+</head>
+<body class="bg-white text-zinc-900 antialiased">
+  <!-- Topbar -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-zinc-200">
+    <div class="container mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
+      <a class="font-semibold tracking-tight" href="index.html" title="Torna alla home">← Home</a>
+      <button id="tocToggle" class="md:hidden inline-flex items-center gap-2 text-sm px-3 py-1.5 rounded-lg border border-zinc-300">Indice</button>
+    </div>
+  </header>
+
+  <div class="container mx-auto max-w-6xl px-4">
+    <div class="relative grid grid-cols-1 md:grid-cols-[260px,1fr] gap-6">
+      <!-- Sidebar / TOC -->
+      <aside id="toc" class="md:sticky md:top-16 md:h-[calc(100vh-4rem)] md:overflow-y-auto md:border-r md:border-zinc-200 md:pr-4 bg-white">
+        <nav aria-label="Indice del capitolo" class="py-4">
+          <h2 class="px-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Indice</h2>
+          <ul class="mt-2 space-y-1 text-sm">
+            <li><a class="toc-link" href="#introduzione">Introduzione</a></li>
+            <li><a class="toc-link" href="#1-1-perche-parlarne-oggi">1.1 Perché parlarne oggi</a></li>
+            <li><a class="toc-link" href="#1-2-definizione">1.2 Che cos’è l’IA (definizione)</a></li>
+            <li><a class="toc-link" href="#1-3-storia">1.3 Momenti chiave nella storia</a></li>
+            <li><a class="toc-link" href="#1-4-tipi">1.4 Tipi principali di IA</a></li>
+            <li>
+              <a class="toc-link" href="#1-5-ml-dl">1.5 Machine Learning e Deep Learning</a>
+              <ul class="mt-1 ml-3 space-y-1">
+                <li><a class="toc-sublink" href="#1-5-1-ml">1.5.1 Machine Learning</a></li>
+                <li><a class="toc-sublink" href="#1-5-2-dl">1.5.2 Deep Learning</a></li>
+              </ul>
+            </li>
+            <li><a class="toc-link" href="#1-6-applicazioni">1.6 Applicazioni</a></li>
+            <li><a class="toc-link" href="#1-7-come-funziona">1.7 Come funziona un sistema di IA</a></li>
+            <li><a class="toc-link" href="#1-8-punti-forza-limiti">1.8 Punti di forza e limiti</a></li>
+            <li><a class="toc-link" href="#1-9-miti">1.9 Miti, fraintendimenti e realtà</a></li>
+            <li><a class="toc-link" href="#1-10-llm">1.10 Cenni sui LLM</a></li>
+            <li><a class="toc-link" href="#1-13-glossario">1.13 Glossario essenziale</a></li>
+            <li><a class="toc-link" href="#1-14-biblio">1.14 Bibliografia e risorse</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Content -->
+      <main class="py-6">
+        <article class="prose prose-zinc lg:prose-lg max-w-none">
+          <h1 id="introduzione">Capitolo 1 — Cos’è l’Intelligenza Artificiale?</h1>
+          <p>Questa introduzione presenta che cosa si intende per Intelligenza Artificiale (IA) in senso generale, le principali tappe storiche che ne hanno plasmato lo sviluppo, le tipologie oggi più diffuse e il funzionamento di base dei sistemi moderni. Sono delineati punti di forza e limiti, insieme al quadro istituzionale di riferimento. Nella parte finale sono proposti alcuni cenni ai modelli linguistici di grandi dimensioni (LLM), che saranno approfonditi in seguito. Il capitolo include un glossario essenziale e una breve bibliografia ragionata.</p>
+          <hr />
+
+          <h2 id="1-1-perche-parlarne-oggi">1.1 Perché parlarne oggi</h2>
+          <p>L’Intelligenza Artificiale è una tecnologia pervasiva. Alimenta funzioni che si usano quotidianamente — dalla ricerca di informazioni alla traduzione, dalla fotografia computazionale ai sistemi di raccomandazione — e incide su processi industriali, ricerca scientifica e comunicazione. La sua presenza non è episodica: è il risultato di un percorso lungo decenni, accelerato dalla disponibilità di dati digitali e di potenza di calcolo. Comprendere che cosa l’IA può fare, come lo fa e quali siano i suoi limiti permette di adottarla in modo consapevole, evitando ingenuità e allarmismi.</p>
+
+          <h2 id="1-2-definizione">1.2 Che cos’è l’Intelligenza Artificiale (definizione generale)</h2>
+          <p>Con <strong>Intelligenza Artificiale</strong> si indica l’insieme di metodi, strumenti e prassi che consentono a un sistema informatico di svolgere compiti per i quali, in genere, si richiederebbe intelligenza umana: comprendere e generare linguaggio, riconoscere pattern in immagini o suoni, prendere decisioni sotto vincoli, apprendere dall’esperienza. La definizione è volutamente ampia: descrive un <strong>campo</strong> di studio e di applicazione, non un singolo algoritmo. Due idee guidano questo capitolo: l’IA si valuta per il <strong>comportamento osservabile</strong> (che cosa fa) e per l’<strong>adeguatezza al compito</strong> e al contesto in cui opera.</p>
+
+          <h2 id="1-3-storia">1.3 Momenti chiave nella storia dell’IA</h2>
+          <p>La storia dell’IA alterna slanci e ripensamenti. Alcune tappe orientano ancora oggi il modo in cui si progettano e si usano i sistemi intelligenti.</p>
+          <p><strong>1936–1950: fondazioni concettuali.</strong> Nel 1936 Alan Turing formalizza la nozione di macchina universale, ponendo le basi della computazione moderna. Nel 1950, con il saggio <em>Computing Machinery and Intelligence</em>, propone un criterio pragmatico per valutare il comportamento intelligente delle macchine, divenuto noto come “test di Turing”.</p>
+          <p><strong>1943–1957: neuro-analogia e primi modelli di apprendimento.</strong> McCulloch e Pitts (1943) introducono un modello di neurone artificiale. Nel 1956 il convegno di Dartmouth consacra l’IA come disciplina. Nel 1957 nasce il <strong>percettrone</strong>, capace di apprendere semplici classificazioni da esempi.</p>
+          <p><strong>Anni ’60–’80: sistemi esperti e inverni dell’IA.</strong> L’entusiasmo iniziale si confronta con limiti teorici e pratici, dando luogo a fasi di rallentamento (“inverni”). Parallelamente emergono i <strong>sistemi esperti</strong>, basati su regole e basi di conoscenza, efficaci in domini ristretti e ben formalizzati (per esempio, diagnosi supportate da regole).</p>
+          <p><strong>1997: l’IA sconfigge il campione del mondo di scacchi.</strong> Deep Blue di IBM batte Garry Kasparov, dimostrando che in compiti strutturati e chiusi le macchine possono superare prestazioni umane d’élite.</p>
+          <p><strong>Anni 2000: dati e calcolo.</strong> La crescita del web, la diffusione di sensori e dispositivi mobili e l’abbattimento dei costi di calcolo favoriscono l’apprendimento su larga scala.</p>
+          <p><strong>2012–2017: reti profonde e nuove architetture.</strong> Dal 2012 reti neurali “profonde” ottengono risultati di riferimento in visione artificiale. Nel 2017 si afferma un’architettura particolarmente adatta alla modellazione di sequenze (come il testo), che inaugura un nuovo corso per i modelli del linguaggio.</p>
+          <p><strong>2018–oggi: IA generativa e adozione diffusa.</strong> Assistenti vocali e testuali, traduttori, strumenti di sintesi e generazione di contenuti entrano nella quotidianità. I modelli generativi ampliano gli orizzonti applicativi, con benefici e nuove responsabilità.</p>
+
+          <h2 id="1-4-tipi">1.4 Tipi principali di IA</h2>
+          <p>L’espressione “tipi di IA” non indica categorie rigide quanto piuttosto <strong>famiglie di approcci</strong> che rispondono a esigenze diverse. Le seguenti descrizioni offrono un quadro orientativo.</p>
+          <p><strong>Reactive Machines.</strong> Sono sistemi che reagiscono agli stimoli <strong>senza fare affidamento su memoria di lungo periodo</strong>. Valutano lo stato corrente del problema e producono un’azione sulla base di regole o valutazioni predefinite. Eccellono in compiti ben specificati e ripetitivi, nei quali è possibile calcolare rapidamente mosse o scelte sulla base della situazione presente.</p>
+          <p><strong>Expert Systems.</strong> Fanno leva su una <strong>base di conoscenza</strong> e su un <strong>motore inferenziale</strong> che applica regole per trarre conclusioni. Sono efficaci quando la conoscenza del dominio può essere espressa in modo esplicito e verificabile (per esempio, alberi decisionali o regole di produzione). Offrono tracciabilità del ragionamento, ma faticano ad adattarsi quando le regole diventano troppo numerose o instabili.</p>
+          <p><strong>Machine Learning (ML).</strong> Rappresenta il passaggio dalla programmazione di regole all’<strong>apprendimento da dati</strong>. Invece di codificare manualmente tutte le casistiche, si forniscono esempi da cui il sistema ricava schemi utili per classificare, prevedere o raggruppare. L’efficacia dipende dalla qualità e dalla rappresentatività dei dati.</p>
+          <p><strong>Deep Learning (DL).</strong> È un sottoinsieme del ML che utilizza <strong>reti neurali con molti strati</strong> per apprendere rappresentazioni gerarchiche dei dati. Si dimostra particolarmente adatto a informazioni non strutturate — immagini, audio, testo — nelle quali è vantaggioso estrarre automaticamente caratteristiche di alto livello.</p>
+          <p><strong>Generative AI.</strong> Comprende modelli in grado di <strong>produrre nuovi contenuti</strong> coerenti con i dati di riferimento: testi, immagini, musica, audio, video. L’uscita non è una semplice etichetta o un numero, ma un contenuto strutturato che può fungere da bozza, prototipo o variazione.</p>
+
+          <h2 id="1-5-ml-dl">1.5 Machine Learning e Deep Learning</h2>
+          <p>Le denominazioni “Machine Learning” e “Deep Learning” sono spesso usate insieme, ma indicano livelli diversi di astrazione e di tecniche.</p>
+
+          <h3 id="1-5-1-ml">1.5.1 Machine Learning</h3>
+          <p>Nel ML l’attenzione è posta sulla costruzione di modelli che <strong>apprendono</strong> dai dati. Una parte rilevante del lavoro riguarda la <strong>preparazione</strong> e la <strong>rappresentazione</strong> dell’informazione: talvolta è necessario trasformare i dati grezzi in caratteristiche descrittive (feature) che rendano il problema trattabile.</p>
+          <p>Le modalità di apprendimento più diffuse sono tre. Nell’<strong>apprendimento supervisionato</strong> il sistema studia esempi corredati dalla risposta corretta e impara a mappare ingressi in uscite: è il caso tipico della classificazione (spam/non spam) o della regressione (prevedere un valore numerico). Nell’<strong>apprendimento non supervisionato</strong> non si forniscono etichette: si cercano regolarità, raggruppamenti o riduzioni di dimensionalità utili a esplorare la struttura dei dati. Nell’<strong>apprendimento per rinforzo</strong> il sistema interagisce con un ambiente e riceve feedback sotto forma di ricompense o penalità, adattando la propria strategia per massimizzare il risultato nel tempo.</p>
+          <p>Il ML tradizionale rende al meglio con <strong>dati strutturati</strong> (tabelle, misure) e beneficia del lavoro di <strong>feature engineering</strong>. Può incontrare difficoltà di fronte a segnali complessi come immagini e suoni, dove la struttura rilevante non è immediatamente evidente e la rappresentazione manuale diventa onerosa.</p>
+
+          <h3 id="1-5-2-dl">1.5.2 Deep Learning</h3>
+          <p>Il DL affronta il problema della rappresentazione in modo <strong>automatico</strong>. Le reti neurali profonde apprendono più livelli di astrazione: i primi strati catturano pattern elementari, i successivi combinano tali pattern in strutture più complesse. Questo meccanismo ha reso possibili avanzamenti significativi nella visione artificiale, nel riconoscimento vocale e nel trattamento del linguaggio.</p>
+          <p>L’efficacia del DL è legata alla disponibilità di <strong>grandi quantità di dati</strong> e di <strong>potenza di calcolo</strong>. Tra i limiti più discussi rientrano la <strong>spiegabilità</strong> (è spesso difficile ricostruire perché un modello profondo abbia preso una certa decisione) e la sensibilità al contesto di addestramento, che può richiedere aggiornamenti periodici o tecniche di regolarizzazione e controllo.</p>
+
+          <h2 id="1-6-applicazioni">1.6 Applicazioni dell’IA</h2>
+          <p>Le applicazioni sono numerose e si estendono a domini molto diversi tra loro. Alcune aree sono divenute emblematiche.</p>
+          <p><strong>Computer Vision.</strong> La capacità di interpretare immagini e video ha consentito di sviluppare sistemi di riconoscimento di oggetti e volti, strumenti di supporto alla diagnosi medica basati su immagini e componenti per la guida assistita e autonoma. Le medesime tecniche permettono anche il controllo qualità in ambito industriale e la lettura automatica di documenti.</p>
+          <p><strong>Natural Language Processing (NLP).</strong> La comprensione e la generazione di testo alimentano traduzioni automatiche, riassunti, motori di ricerca, classificazione di documenti, filtri antispam e assistenti vocali. L’attenzione non è limitata alla correttezza grammaticale: conta la coerenza con il contesto d’uso e la capacità di riformulare contenuti per destinatari diversi.</p>
+          <p><strong>Robotics.</strong> L’integrazione di percezione, controllo e pianificazione consente a robot industriali, droni e macchine autonome di svolgere compiti in ambienti variabili, con livelli diversi di collaborazione con l’essere umano.</p>
+          <p><strong>Generative AI.</strong> La produzione di testi, immagini, musica e video apre scenari di prototipazione rapida di idee, supporto alla scrittura e alla creatività, generazione di materiale didattico e accessibilità dei contenuti. A fronte di questi vantaggi emergono domande sulla verifica dei risultati, sulla proprietà intellettuale e sulla responsabilità dell’uso.</p>
+
+          <h2 id="1-7-come-funziona">1.7 Come funziona (in generale) un sistema di IA</h2>
+          <p>Benchè esistano molte famiglie di metodi, gran parte dei sistemi moderni segue una sequenza concettuale ricorrente.</p>
+          <p><strong>Definizione del problema e dei dati.</strong> Ogni progetto inizia dalla chiarificazione del compito: che cosa si vuole ottenere e con quali vincoli? A partire da qui, si individuano i dati pertinenti (testi, immagini, tabelle, registrazioni) e se ne valuta qualità e rappresentatività.</p>
+          <p><strong>Preparazione.</strong> I dati vengono puliti, anonimizzati quando necessario, bilanciati e resi omogenei. Nei casi in cui sia utile, si costruiscono <strong>caratteristiche</strong> (feature) che descrivono aspetti informativi del problema.</p>
+          <p><strong>Addestramento (training).</strong> Il sistema apprende schemi dai dati disponibili. Le modalità di apprendimento possono essere supervisionate, non supervisionate o per rinforzo.</p>
+          <p><strong>Valutazione.</strong> Le prestazioni si misurano su dati non visti in precedenza, per verificare la capacità di generalizzare. Si monitora il rischio di <strong>overfitting</strong> e di <strong>underfitting</strong>.</p>
+          <p><strong>Inferenza e monitoraggio.</strong> Una volta messo in esercizio, il sistema elabora nuovi dati producendo previsioni, decisioni o contenuti. Poiché i contesti cambiano, il monitoraggio continuo aiuta a mantenere affidabilità e sicurezza nel tempo.</p>
+
+          <h2 id="1-8-punti-forza-limiti">1.8 Punti di forza e limiti</h2>
+          <p>I sistemi di IA esprimono al meglio il proprio valore quando esistono dati affidabili, obiettivi chiari e vincoli di decisione ben definiti. In questi scenari offrono <strong>scalabilità</strong> e individuano <strong>pattern non ovvi</strong>, talvolta controintuitivi. Inoltre, molte tecnologie attuali gestiscono forme di informazione differenti — testo, immagini, audio — avvicinando casi d’uso un tempo lontani.</p>
+          <p>Accanto a questi vantaggi, occorre considerare alcune limitazioni. La qualità dei risultati dipende dalla <strong>qualità dei dati</strong> e dalla pertinenza rispetto al contesto d’uso. Molti modelli operano come <strong>“scatole nere”</strong>, per cui è difficile ricostruire esattamente la catena causale che ha portato a una decisione; la spiegabilità diventa quindi un requisito progettuale. Nei sistemi generativi può presentarsi il fenomeno delle <strong>allucinazioni</strong>, ovvero la produzione di contenuti plausibili ma inesatti, che impone controlli e verifiche. Infine, addestramento e uso su larga scala hanno <strong>costi</strong> (economici ed energetici) e sollevano temi di <strong>privacy</strong> e <strong>proprietà intellettuale</strong>.</p>
+
+          <h2 id="1-9-miti">1.9 Miti, fraintendimenti e realtà</h2>
+          <p>Una preoccupazione ricorrente riguarda la possibile sostituzione integrale di professioni complesse. Parleremo di questo argomento in modo più esteso più avanti, ma per ora possiamo affermare che l’IA tende a <strong>ridefinire i compiti</strong>: automatizza attività ripetitive o altamente standardizzate e, al tempo stesso, mette in risalto il valore della progettazione, della valutazione critica e della responsabilità umana. Un’altra semplificazione frequente assimila i sistemi moderni a “correttori avanzati di testo”: in realtà le tecnologie attuali operano su problemi articolati di comprensione, trasformazione e pianificazione, pur restando fallibili. Infine, “usare l’IA” non coincide con un comportamento scorretto: il discrimine è dato dalle <strong>regole d’uso</strong>, dalla trasparenza e dalla capacità di argomentare e verificare i risultati.</p>
+
+          <h2 id="1-10-llm">1.10 Cenni sui modelli linguistici di grandi dimensioni (LLM)</h2>
+          <p>I <strong>modelli linguistici di grandi dimensioni</strong> sono sistemi addestrati su ampie collezioni di testi per prevedere la parola successiva in una sequenza. Da questa semplice idea discendono capacità di generare paragrafi coerenti, riassumere, tradurre, spiegare concetti o proporre bozze di codice. Alcuni termini ricorrenti:</p>
+          <ul>
+            <li><strong>Prompt</strong>: il prompt è la richiesta o la domanda che viene fornita al modello per generare una risposta specifica.</li>
+            <li><strong>Training</strong>: il training è il processo attraverso il quale il modello apprende dai dati per migliorare la sua capacità di generare output accurati.</li>
+            <li><strong>Allucinazioni</strong>: le allucinazioni sono le informazioni generate dal modello che sembrano corrette ma in realtà sono false o non basate sui dati.</li>
+            <li><strong>Finestra di contesto</strong> o <em>context window</em>: la finestra di contesto è la porzione di testo che il modello tiene in considerazione per generare una risposta, influenzando la rilevanza e la coerenza dell’output.</li>
+            <li><strong>Temperatura</strong>: la temperatura è un parametro che determina quanto l’output del modello sia prevedibile o creativo, influenzando la diversità delle risposte generate.</li>
+          </ul>
+
+          <h2 id="1-13-glossario">1.13 Glossario essenziale</h2>
+          <ul>
+            <li><strong>Intelligenza Artificiale (IA):</strong> metodi e strumenti che permettono a un sistema informatico di eseguire compiti tipicamente associati all’intelligenza umana.</li>
+            <li><strong>Dati:</strong> informazioni (testo, immagini, audio, tabelle) utilizzate per addestrare o alimentare un sistema.</li>
+            <li><strong>Apprendimento:</strong> processo attraverso cui un sistema individua schemi utili nei dati per svolgere un compito.</li>
+            <li><strong>Training:</strong> fase di addestramento del sistema su esempi selezionati.</li>
+            <li><strong>Inferenza:</strong> utilizzo del sistema addestrato su nuovi dati per produrre previsioni, decisioni o contenuti.</li>
+            <li><strong>Overfitting / Underfitting:</strong> eccessiva aderenza agli esempi di addestramento / capacità insufficiente a rappresentare il problema.</li>
+            <li><strong>Bias:</strong> distorsioni nei dati o nei modelli che portano a risultati sistematicamente sbilanciati.</li>
+            <li><strong>Spiegabilità:</strong> grado in cui il funzionamento interno o le motivazioni di una decisione del sistema possono essere comprese e comunicate.</li>
+            <li><strong>LLM:</strong> modelli capaci di generare e comprendere testo su larga scala; saranno trattati in dettaglio in seguito.</li>
+          </ul>
+
+          <h2 id="1-14-biblio">1.14 Bibliografia essenziale e risorse</h2>
+          <ul>
+            <li>Ministero dell’Istruzione e del Merito (MIM), <strong>Linee guida sull’IA nella scuola</strong> (2025). Principi di trasparenza, comprensibilità e uso responsabile.</li>
+            <li>Ray Kurzweil, <em>How to Create a Mind</em>. Testo divulgativo sul funzionamento delle architetture ispirate al cervello e sulle implicazioni per l’IA.</li>
+            <li>Risorse introduttive per l’esplorazione autonoma: ambienti interattivi che aiutano a intuire confini decisionali e rappresentazioni nelle reti neurali.</li>
+          </ul>
+        </article>
+
+        <!-- Prev / Next -->
+        <nav class="mt-12 flex items-center justify-between gap-4 border-t border-zinc-200 pt-6">
+          <a class="pager disabled" aria-disabled="true" tabindex="-1">← Precedente</a>
+          <span class="text-sm text-zinc-500">Capitolo successivo in arrivo</span>
+          <a class="pager disabled" aria-disabled="true" tabindex="-1">Successivo →</a>
+        </nav>
+
+        <footer class="mt-10 text-sm text-zinc-600">© <span id="year"></span> — Capitolo 1</footer>
+      </main>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

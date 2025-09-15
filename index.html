@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Introduzione all'IA — Home</title>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Mini sito statico: capitoli introduttivi sull'Intelligenza Artificiale." />
+</head>
+<body class="bg-zinc-50 text-zinc-900 antialiased">
+  <!-- Topbar -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-zinc-200">
+    <div class="container mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
+      <a class="font-semibold tracking-tight" href="index.html">Introduzione all'IA</a>
+      <nav class="text-sm text-zinc-600">AI for Education</nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto max-w-6xl px-4 py-10">
+    <section class="mb-10">
+      <h1 class="text-2xl md:text-3xl font-semibold tracking-tight">Capitoli</h1>
+      <p class="mt-2 text-zinc-600">Quattro riquadri: il primo è attivo, gli altri arriveranno presto.</p>
+    </section>
+
+    <!-- Grid cards -->
+    <section>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Card 1: active -->
+        <article class="card group">
+          <div class="card-body">
+            <div class="text-xs uppercase tracking-wide text-emerald-600">Capitolo 1</div>
+            <h2 class="mt-1 text-lg font-medium group-hover:underline">Cos'è l'Intelligenza Artificiale?</h2>
+            <p class="mt-2 text-sm text-zinc-600">Definizione, storia essenziale, tipologie, funzionamento, punti di forza e limiti, cenni sui LLM.</p>
+            <div class="mt-4 flex gap-2">
+              <a href="capitolo-1.html" class="btn-primary">Apri</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: disabled -->
+        <article class="card opacity-60 pointer-events-none" aria-disabled="true">
+          <div class="card-body">
+            <div class="text-xs uppercase tracking-wide text-zinc-500">Capitolo 2</div>
+            <h2 class="mt-1 text-lg font-medium">In arrivo</h2>
+            <p class="mt-2 text-sm text-zinc-600">Contenuti non ancora disponibili.</p>
+            <div class="mt-4"><span class="btn-disabled">Non disponibile</span></div>
+          </div>
+        </article>
+
+        <!-- Card 3: disabled -->
+        <article class="card opacity-60 pointer-events-none" aria-disabled="true">
+          <div class="card-body">
+            <div class="text-xs uppercase tracking-wide text-zinc-500">Capitolo 3</div>
+            <h2 class="mt-1 text-lg font-medium">In arrivo</h2>
+            <p class="mt-2 text-sm text-zinc-600">Contenuti non ancora disponibili.</p>
+            <div class="mt-4"><span class="btn-disabled">Non disponibile</span></div>
+          </div>
+        </article>
+
+        <!-- Card 4: disabled -->
+        <article class="card opacity-60 pointer-events-none" aria-disabled="true">
+          <div class="card-body">
+            <div class="text-xs uppercase tracking-wide text-zinc-500">Capitolo 4</div>
+            <h2 class="mt-1 text-lg font-medium">In arrivo</h2>
+            <p class="mt-2 text-sm text-zinc-600">Contenuti non ancora disponibili.</p>
+            <div class="mt-4"><span class="btn-disabled">Non disponibile</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="mt-16 pt-6 border-t border-zinc-200 text-sm text-zinc-600">
+      © <span id="year"></span> — Mini sito IA
+    </footer>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
