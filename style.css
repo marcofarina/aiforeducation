@@ -1,89 +1,79 @@
-/* Tailwind utility-first per la maggior parte degli stili.
-   Questo file contiene solo piccole rifiniture condivise. */
+/* Importa le utility di base di Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root{
-  --ring: 0 0% 0%;
+/* Stili personalizzati */
+body {
+    font-family: 'Inter', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
-
-/* Cards */
-.card{
-  @apply rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:shadow-md;
-}
-.card-body{ @apply p-5; }
-
-/* Buttons */
-.btn-primary{
-  @apply inline-flex items-center justify-center rounded-xl px-3.5 py-2 text-sm font-medium border border-emerald-600 bg-emerald-600 text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600/40;
-}
-.btn-disabled{
-  @apply inline-flex items-center justify-center rounded-xl px-3.5 py-2 text-sm font-medium border border-zinc-300 text-zinc-500;
+/* Stili per la classe 'prose' (contenuto dell'articolo) per una migliore tipografia */
+.prose h1 {
+    @apply text-3xl md:text-4xl font-bold text-slate-900 mb-4;
 }
 
-/* TOC links */
-.toc-link, .toc-sublink{ @apply block px-2 py-1 rounded-md text-zinc-700 hover:bg-zinc-100; }
-.toc-link.active, .toc-sublink.active{ @apply bg-emerald-50 text-emerald-700 font-medium; }
+.prose h2 {
+    @apply text-2xl md:text-3xl font-bold text-slate-900 mt-0 mb-4; /* Rimosso mt-12 perché ora gestito da hr */
+}
 
-/* Pager */
-.pager{ @apply inline-flex items-center rounded-xl px-3.5 py-2 text-sm border border-zinc-300 hover:bg-zinc-50; }
-.pager.disabled{ @apply text-zinc-400 bg-zinc-50 border-zinc-200 pointer-events-none; }
+.prose h3 {
+    @apply text-xl md:text-2xl font-bold text-slate-900 mt-8 mb-3;
+}
 
-/* Mobile TOC visibility */
-#toc[hidden]{ display: none; }
+.prose p, .prose ul, .prose ol {
+    @apply text-base text-slate-700 leading-relaxed;
+}
 
-/* Basic typography improvements beyond prose */
-.prose :where(h1,h2,h3){ scroll-margin-top: 6rem; }
+.prose a {
+    @apply text-blue-600 hover:underline;
+}
 
-/* Scrollbar subtle styling (supported browsers) */
-*::-webkit-scrollbar{ width: 10px; height: 10px; }
-*::-webkit-scrollbar-thumb{ background: #e5e7eb; border-radius: 9999px; }
-*::-webkit-scrollbar-thumb:hover{ background: #d4d4d8; }
+.prose strong {
+    @apply font-semibold text-slate-900;
+}
+
+.prose hr {
+    @apply my-12 border-slate-200;
+}
+
+.prose ul {
+    @apply list-disc pl-5;
+}
+.prose ul li {
+    @apply mb-2;
+}
 
 
-/* =============================
-FILE: app.js
-============================== */
-// Year in footer
-(function(){
-  const y = new Date().getFullYear();
-  document.querySelectorAll('#year').forEach(el => el.textContent = y);
-})();
+.prose ol {
+    @apply list-decimal pl-5;
+}
+.prose ol li {
+    @apply mb-2;
+}
 
-// Mobile TOC toggle
-(function(){
-  const btn = document.getElementById('tocToggle');
-  const toc = document.getElementById('toc');
-  if(!btn || !toc) return;
-  // Start hidden on mobile
-  if (window.matchMedia('(max-width: 767px)').matches) toc.setAttribute('hidden','');
-  btn.addEventListener('click', ()=>{
-    if (toc.hasAttribute('hidden')) toc.removeAttribute('hidden');
-    else toc.setAttribute('hidden','');
-  });
-})();
+.prose .lead {
+    @apply text-xl text-slate-600 italic border-l-4 border-slate-200 pl-4;
+}
 
-// TOC active section highlighter
-(function(){
-  const links = Array.from(document.querySelectorAll('.toc-link, .toc-sublink'));
-  if(!links.length) return;
-  const map = new Map();
-  links.forEach(a => {
-    const id = a.getAttribute('href')?.slice(1);
-    const target = id ? document.getElementById(id) : null;
-    if(target) map.set(target, a);
-  });
+/* Stili per il menu di navigazione laterale */
+.nav-link {
+    @apply block text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-200 text-sm;
+}
 
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry => {
-      const link = map.get(entry.target);
-      if(!link) return;
-      if(entry.isIntersecting){
-        links.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      }
-    });
-  }, { rootMargin: '0px 0px -70% 0px', threshold: 0.01 });
+/* NUOVO: Stili per i box informativi (Glossario, Bibliografia) */
+.info-box {
+    @apply bg-slate-50 border border-slate-200 rounded-lg p-6 my-6 not-prose;
+}
 
-  map.forEach((_, section)=> observer.observe(section));
-})();
+.info-box ul {
+    @apply list-none p-0 m-0;
+}
+
+.info-box li {
+    @apply text-base py-3 border-b border-slate-200 last:border-none;
+}
+
+.info-box li strong {
+    @apply font-semibold text-slate-800;
+}
