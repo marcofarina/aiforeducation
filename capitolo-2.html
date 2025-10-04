@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitolo 2 — Modelli linguistici di grandi dimensioni (LLM)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white font-sans text-slate-800">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-20 border-b border-slate-200">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-lg font-bold text-slate-900 hover:text-blue-600 transition">Guida AI</a>
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+            <aside id="sidebar" class="md:w-64 lg:w-72 md:py-8 hidden md:block md:sticky md:top-16 self-start transition-all">
+                <nav>
+                    <h3 class="font-semibold text-slate-900 mb-3">Indice del Capitolo</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#par-2-1" class="nav-link">2.1 Perché i LLM contano oggi</a></li>
+                        <li><a href="#par-2-2" class="nav-link">2.2 Che cosa è un LLM</a></li>
+                        <li><a href="#par-2-3" class="nav-link">2.3 L’architettura Transformer</a></li>
+                        <li><a href="#par-2-4" class="nav-link">2.4 Token e tokenizzazione</a></li>
+                        <li><a href="#par-2-5" class="nav-link">2.5 La finestra di contesto</a></li>
+                        <li><a href="#par-2-6" class="nav-link">2.6 Parametri di generazione</a></li>
+                        <li><a href="#par-2-7" class="nav-link">2.7 Progettare prompt efficaci</a></li>
+                        <li><a href="#par-2-8" class="nav-link">2.8 Strategie utili di prompting</a></li>
+                        <li><a href="#par-2-9" class="nav-link">2.9 Allucinazioni: cosa sono</a></li>
+                        <li><a href="#par-2-10" class="nav-link">2.10 Cosa sanno fare i modelli</a></li>
+                        <li><a href="#par-2-11" class="nav-link">2.11 Panoramica dell’ecosistema</a></li>
+                        <li><a href="#par-2-12" class="nav-link">2.12 Buone pratiche per l’uso</a></li>
+                        <li><a href="#par-2-13" class="nav-link">2.13 Glossario essenziale (LLM)</a></li>
+                        <li><a href="#par-2-14" class="nav-link">2.14 Bibliografia e risorse</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="flex-1 py-8">
+                <article class="prose lg:prose-lg max-w-none">
+                    <h1>Capitolo 2 — Modelli linguistici di grandi dimensioni (LLM)</h1>
+                    <p class="lead">Definizione e principi di funzionamento dei LLM, token e finestra di contesto, progettazione dei prompt, allucinazioni e mitigazioni, capacità e limiti, panoramica dell’ecosistema e buone pratiche per l’uso educativo.</p>
+                    <hr />
+                    <h2 id="par-2-1">2.1 Perché i LLM contano oggi</h2>
+                    <p>La disponibilità di modelli generativi accessibili ha trasformato il modo di cercare informazioni, scrivere, programmare e progettare attività. L’impatto è visibile tanto nella didattica quanto nel lavoro quotidiano: un docente può preparare una bozza di rubriche o generare esempi graduati; uno studente può riformulare un paragrafo difficile o creare un glossario di supporto. Per sfruttare queste possibilità è utile conoscere come i modelli funzionano a grandi linee e dove possono fallire.</p>
+                    <hr />
+                    <h2 id="par-2-2">2.2 Che cosa è un LLM</h2>
+                    <p>Un <strong>Large Language Model</strong> è un sistema addestrato su ampie collezioni di testo per <strong>prevedere il prossimo elemento</strong> di una sequenza (parola o porzione di parola). Da questa abilità elementare emergono comportamenti complessi: capacità di seguire istruzioni, di adattarsi a formati diversi, di mantenere coerenza sul breve periodo e di manipolare strutture linguistiche con flessibilità. La risposta prodotta non è recuperata da un archivio, ma <strong>generata</strong> token dopo token in base al contesto fornito.</p>
+                    <hr />
+                    <h2 id="par-2-3">2.3 L’architettura Transformer, in poche parole</h2>
+                    <p>I LLM moderni si basano comunemente su un’architettura chiamata <strong>Transformer</strong>. L’idea chiave è il meccanismo di <strong>attenzione</strong>: il modello, mentre elabora un token, “pesa” le parti più rilevanti della sequenza già vista e usa queste relazioni per produrre la continuazione. Strati successivi di attenzione e proiezioni lineari consentono di comporre relazioni via via più astratte. Non è necessario entrare nei dettagli matematici per farne un uso consapevole: basti sapere che questa struttura permette di modellare in modo efficace dipendenze anche lontane nel testo e di adattarsi a compiti diversi senza riscrivere l’algoritmo da zero.</p>
+                    <hr />
+                    <h2 id="par-2-4">2.4 Token e tokenizzazione</h2>
+                    <p>Il testo non viene letto come un flusso continuo di caratteri. Prima dell’elaborazione, una funzione chiamata <strong>tokenizer</strong> divide l’input in <strong>token</strong>, che possono essere parole intere, parti di parola o anche segni di punteggiatura. Il modello ragiona e genera a livello di token. Questo ha conseguenze pratiche: la <strong>lunghezza</strong> di prompt e risposta è misurata in token; espressioni apparentemente brevi possono occupare molti token (per esempio, lingue con parole composte o testi tecnici ricchi di simboli). Saper stimare l’ordine di grandezza del conteggio aiuta a progettare interazioni più efficienti.</p>
+                    <hr />
+                    <h2 id="par-2-7">2.7 Progettare prompt efficaci</h2>
+                    <p>Un prompt efficace specifica <strong>ruolo</strong>, <strong>contesto</strong>, <strong>obiettivo</strong> e <strong>forma dell’output</strong>. Definire il ruolo orienta il tono e le priorità; includere il contesto evita ambiguità; chiarire l’obiettivo riduce il rischio di divagazioni; fissare l’output desiderato (per esempio, “un paragrafo argomentato”, “una tabella con tre colonne”, “uno schema in dieci righe”) facilita la valutazione e il riuso. È spesso utile aggiungere <strong>vincoli</strong> (criteri di qualità, livello linguistico, riferimenti a cui attenersi) ed <strong>esempi</strong> dell’output atteso, specialmente quando si richiede un formato standardizzato.</p>
+                    <div class="info-box not-prose">
+                        <p class="font-mono text-sm bg-slate-100 p-4 rounded">
+                            <b>Ruolo:</b> sei un redattore tecnico.<br>
+                            <b>Contesto:</b> devo spiegare a lettori non specialisti come funziona la finestra di contesto nei LLM.<br>
+                            <b>Obiettivo:</b> scrivi un paragrafo chiaro e conciso che definisca il concetto ed evidenzi due implicazioni pratiche.<br>
+                            <b>Output:</b> un unico paragrafo di 6–8 frasi, senza elenchi.<br>
+                            <b>Vincoli:</b> evita termini non spiegati; se introduci un termine tecnico, definiscilo.
+                        </p>
+                    </div>
+                    <hr />
+                    <h2 id="par-2-9">2.9 Allucinazioni: che cosa sono e come si mitigano</h2>
+                    <p>Con <strong>allucinazione</strong> si intende un’uscita plausibile ma errata o non supportata da fonti. Non è un “capriccio” occasionale, bensì una conseguenza del modo in cui i LLM generano testo: quando il contesto è insufficiente o il modello è “spinto” a completare un’informazione che non possiede, può produrre una risposta convincente ma falsa. Le forme più comuni includono l’invenzione di fatti, <strong>contraddizioni interne</strong> fra parti dell’output, risposte <strong>prive di senso</strong> in situazioni limite e riferimenti a pacchetti o librerie <strong>inesistenti</strong> nella generazione di codice.</p>
+                    <p>La mitigazione richiede più livelli di difesa. In primo luogo, <strong>istruzioni chiare</strong> che autorizzino l’astensione (“se l’informazione non è disponibile, dichiara che non lo è”) e che impongano un <strong>formato verificabile</strong> (per esempio, citazioni obbligatorie con controllo dei link). In secondo luogo, l’integrazione con <strong>fonti esterne</strong> attraverso tecniche di recupero di documenti, che forniscono al modello materiali da cui attingere. Infine, la <strong>verifica umana</strong> resta imprescindibile: confronto con fonti indipendenti, controllo incrociato dei numeri, test su esempi noti.</p>
+                     <hr />
+                    <h2 id="par-2-13">2.13 Glossario essenziale (LLM)</h2>
+                    <div class="info-box not-prose">
+                        <ul>
+                            <li><strong>LLM (Large Language Model):</strong> Modello addestrato su grandi collezioni di testo per generare o trasformare linguaggio naturale.</li>
+                            <li><strong>Token:</strong> Unità elementare di testo (parola, parte di parola, segni) usata per la lettura e la generazione.</li>
+                            <li><strong>Tokenizer:</strong> Funzione che converte testo in sequenze di token e viceversa.</li>
+                            <li><strong>Finestra di contesto:</strong> Quantità massima di token che il modello considera simultaneamente (input + output).</li>
+                            <li><strong>Temperatura / top-p:</strong> Parametri che regolano la variabilità dell’uscita.</li>
+                            <li><strong>Prompt:</strong> Istruzione che specifica ruolo, contesto, obiettivo e forma dell’output.</li>
+                            <li><strong>Allucinazione:</strong> Risposta plausibile ma errata o non supportata da fonti.</li>
+                            <li><strong>Multimodalità:</strong> Capacità di trattare, oltre al testo, immagini, audio e altri segnali.</li>
+                            <li><strong>MoE (Mixture of Experts):</strong> Schema in cui diverse “parti” specializzate del modello vengono attivate su porzioni diverse dell’input per aumentare efficienza e capacità.</li>
+                            <li><strong>RAG (Retrieval-Augmented Generation):</strong> Tecnica che combina recupero di documenti e generazione per aumentare accuratezza e verificabilità.</li>
+                        </ul>
+                    </div>
+                    <h2 id="par-2-14">2.14 Bibliografia essenziale e risorse</h2>
+                    <div class="info-box not-prose">
+                        <ul>
+                            <li>Introduzioni visuali al Transformer e alla self-attention.</li>
+                            <li>Strumenti pubblici di conteggio token e di esplorazione della tokenizzazione.</li>
+                            <li>Guide pratiche alla progettazione di prompt e alla riduzione delle allucinazioni.</li>
+                            <li>Piattaforme educative sull’IA con percorsi per non specialisti.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <nav class="flex justify-between items-center mt-12 pt-6 border-t border-slate-200">
+                    <a href="capitolo-1.html" class="text-blue-600 hover:underline">← Precedente</a>
+                    <a href="#" class="text-slate-400 cursor-not-allowed">Successivo →</a>
+                </nav>
+            </main>
+        </div>
+    </div>
+    
+    <footer class="bg-slate-50 border-t border-slate-200 mt-12">
+        <div class="container mx-auto px-4 py-6 text-center text-slate-500 text-sm">
+            <p>&copy; 2025 Guida AI. Realizzato con HTML, Tailwind CSS e JS Vanilla.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const sidebar = document.getElementById('sidebar');
+        mobileMenuButton.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
