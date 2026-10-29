@@ -32,6 +32,24 @@ export default defineConfig({
           ]
         }
       ],
+      '/intermedio/': [
+        {
+          text: 'Corso intermedio',
+          items: [
+            { text: 'Il corso', link: '/intermedio/' },
+            { text: '1 · Gemini dentro il lavoro', link: '/intermedio/incontro-1' },
+            { text: '2 · Le proprie fonti', link: '/intermedio/incontro-2' },
+            { text: '3 · Laboratorio d’ambito', link: '/intermedio/incontro-3' }
+          ]
+        },
+        {
+          text: 'Strumenti',
+          items: [
+            { text: 'Modelli pronti', link: '/intermedio/modelli' },
+            { text: 'Versione da stampare', link: '/intermedio/stampa' }
+          ]
+        }
+      ],
       '/avanzato/': [
         {
           text: 'Corso avanzato',
