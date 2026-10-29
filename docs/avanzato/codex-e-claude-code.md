@@ -3,11 +3,10 @@
 Il corso lavora con Codex, ma il metodo vale anche per altri agenti. Questa tabella mette a
 confronto i concetti del corso con il nome e il posto che hanno in Claude Code.
 
-::: warning In compilazione
-La tabella si riempie un incontro alla volta. Una voce segnata «doc.» viene dalla
-documentazione ufficiale e non è ancora stata provata; la colonna «Provato il» riporta la data
-e la versione dell’app quando la prova c’è stata. Una cella vuota riguarda un incontro non
-ancora scritto.
+::: warning Da completare con le prove in Codex
+Una voce segnata «doc.» viene dalla documentazione ufficiale e non è ancora stata provata; la
+colonna «Provato il» riporta la data e la versione dell’app quando la prova c’è stata. Le prove
+con l’app Codex e la licenza della scuola non sono ancora state fatte.
 :::
 
 | Concetto | Codex | Claude Code | Provato il |
@@ -22,3 +21,8 @@ ancora scritto.
 | Riassunto del contesto | Comando `/compact`, documentato per la riga di comando e per l’estensione degli editor; nell’app da verificare | Comando `/compact`, anche con l’indicazione di che cosa tenere (doc.) | — |
 | Scelta del modello e dello sforzo | Selettori del modello e dello sforzo nell’app (doc.) | Comando `/model`; sforzo regolabile a parte (doc.) | — |
 | Connettori (MCP) | Impostazioni › MCP servers nell’app, oppure `config.toml`, condiviso con la riga di comando; se i connettori di ChatGPT valgono anche in Codex non è documentato (doc.) | File `.mcp.json` nel progetto o comando `claude mcp add`; ogni strumento del connettore si autorizza o si vieta a parte | Claude Code: connettore a una cartella del dipartimento con i soli strumenti di lettura, 29/10/2026, versione 2.1.312 |
+| Domande a scelta durante il lavoro | L’agente le scrive come testo nella conversazione; se l’app le mostra come pulsanti è da verificare | Le scrive come testo, oppure con uno strumento di domande a scelta (doc.) | Claude Code: intervista di otto domande con opzioni e scelta consigliata, scritte come testo, 29/10/2026, versione 2.1.312 da riga di comando |
+| Lavoro ripreso in una sessione nuova | Un file di piano con la sezione dello stato, letto a parole («continua il lavoro su…») | Lo stesso | Claude Code: piano scritto in una sessione, eseguito in altre due ripartendo dallo stato, 29/10/2026, versione 2.1.312 |
+| Obiettivo con condizione di fine | Comando `/goal`; disponibilità nell’app riportata solo da fonti secondarie (doc.) | Comando `/goal`, con un secondo modello che giudica la condizione (doc.) | — (il corso usa la condizione scritta nel piano) |
+| Sotto-agenti | Sotto-agenti e agenti personalizzati in `.codex/agents/`, su Plus e piani superiori (doc.) | Sotto-agenti lanciati dall’agente principale, anche in parallelo | Claude Code: tre revisori in parallelo per la revisione a più voci, 29/10/2026, versione 2.1.312 |
+| Pubblicare su GitHub | Da verificare: se l’app pubblica con git e come si autentica su GitHub | Con git, chiesto a parole, se sul computer git è collegato a GitHub (doc.) | — (nel laboratorio la pagina si carica dal browser) |
