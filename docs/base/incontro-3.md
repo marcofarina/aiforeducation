@@ -151,11 +151,13 @@ aggiornamenti sono nella [scheda](./scheda).
   finalità della scuola e con gli strumenti che la scuola ha autorizzato.
 - **AI Act** (Regolamento UE 2024/1689): vieta, fra l’altro, i sistemi che riconoscono le emozioni
   negli istituti di istruzione; considera ad alto rischio i sistemi usati per ammettere,
-  valutare o sorvegliare gli studenti.
+  valutare o sorvegliare gli studenti, con obblighi che si applicano dal 2 dicembre 2027.
 - **Legge 132/2025**: sotto i quattordici anni l’accesso a strumenti di AI richiede il consenso di
   chi esercita la responsabilità genitoriale.
 - **Linee guida del Ministero** per l’introduzione dell’intelligenza artificiale nelle istituzioni
   scolastiche (decreto ministeriale 166/2025).
+- **Decreto legislativo 179/2026**: adegua la normativa italiana all’AI Act, anche sull’uso
+  dell’intelligenza artificiale nella formazione.
 - **Regolamento d’istituto** e indicazioni della dirigenza, se presenti. Per i dubbi sui dati, la
   persona di riferimento è il responsabile della protezione dei dati (RPD) della scuola.
 
