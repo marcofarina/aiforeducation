@@ -1,0 +1,102 @@
+/*
+ * Colori e caratteri del sistema Marginalia (registro accademico),
+ * lo stesso delle slide del corso.
+ */
+:root {
+  --vp-font-family-base: 'IBM Plex Sans Variable', system-ui, sans-serif;
+  --vp-font-family-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --titoli: 'Newsreader Variable', Georgia, serif;
+
+  --vp-c-brand-1: #0b6b4f;
+  --vp-c-brand-2: #0a5c44;
+  --vp-c-brand-3: #0b6b4f;
+  --vp-c-brand-soft: #e3f2ec;
+
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-soft: #f4f6f5;
+  --vp-c-bg-alt: #f4f6f5;
+  --vp-c-text-1: #12171a;
+  --vp-c-text-2: #4a5560;
+  --vp-c-divider: #d5dbd8;
+
+  --vp-c-tip-1: #0b6b4f;
+  --vp-c-tip-soft: #e3f2ec;
+  --vp-c-warning-1: #9a4a00;
+  --vp-c-danger-1: #b3261e;
+}
+
+.dark {
+  --vp-c-brand-1: #3ddc97;
+  --vp-c-brand-2: #6ee7b0;
+  --vp-c-brand-3: #0b6b4f;
+  --vp-c-brand-soft: #123027;
+
+  --vp-c-bg: #0e1116;
+  --vp-c-bg-soft: #161b22;
+  --vp-c-bg-alt: #0a0d11;
+  --vp-c-text-1: #eef0f4;
+  --vp-c-text-2: #a4adb8;
+  --vp-c-divider: #2b323b;
+
+  --vp-c-tip-1: #3ddc97;
+  --vp-c-tip-soft: #123027;
+  --vp-c-warning-1: #fbbf6a;
+  --vp-c-danger-1: #ff8a80;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.VPHero .name,
+.VPHero .text {
+  font-family: var(--titoli);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.vp-doc h2 {
+  border-top: none;
+}
+
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.7;
+}
+
+/* Stampa: solo il testo, senza navigazione */
+@page {
+  margin: 2cm;
+}
+
+@media print {
+  .VPNav,
+  .VPLocalNav,
+  .VPSidebar,
+  .VPDocAside,
+  .VPDocFooter,
+  .VPFooter,
+  .edit-link,
+  .header-anchor {
+    display: none !important;
+  }
+  .VPContent,
+  .VPDoc,
+  .VPDoc .container,
+  .VPDoc .content,
+  .VPDoc .content-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+  .vp-doc a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  .vp-doc h1,
+  .vp-doc h2 {
+    break-after: avoid;
+  }
+  .salto-pagina {
+    break-before: page;
+  }
+}
