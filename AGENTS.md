@@ -55,4 +55,32 @@ Esempio neutro, valido per tutte le edizioni.
 
 L’identificativo dopo `ESEMPIO:ambito` è unico nel sito e non cambia: le appendici d’ambito
 danno un esempio per ogni identificativo. `grep -rn 'ESEMPIO:ambito' docs/intermedio/` li
-elenca tutti.
+elenca tutti. L’ultima riga dentro ogni marcatore rimanda all’esempio delle quattro edizioni.
+
+Le appendici stanno in `docs/intermedio/ambiti/`, una per edizione. Ogni esempio ha un titolo
+con l’ancora uguale all’identificativo (`### Un Gem per la disciplina {#inc1-gem}`) ed è
+racchiuso in una regione con lo stesso nome, che si può includere in un’altra pagina:
+
+```md
+<!-- #region inc1-gem -->
+::: tip Esempio umanistico
+…
+:::
+<!-- #endregion inc1-gem -->
+```
+
+```md
+<!--@include: ./ambiti/umanistico.md#inc1-gem-->
+```
+
+Un esempio nuovo nel tronco comune vuole un identificativo nuovo e una regione in tutte e
+quattro le appendici. Il controllo:
+
+```sh
+for id in $(grep -rho 'ESEMPIO:ambito [a-z0-9-]*' docs/intermedio/*.md | awk '{print $2}'); do
+  echo "$id $(grep -l "#region $id -->" docs/intermedio/ambiti/*.md | wc -l)"
+done   # ogni riga deve finire con 4
+```
+
+Ogni edizione ha la sua pagina da stampare, `docs/intermedio/stampa-<ambito>.md`: i capitoli
+comuni e, in fondo, l’appendice.

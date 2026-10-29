@@ -54,6 +54,7 @@ soluzioni. Domande che il taccuino regge bene: «quali concetti della verifica n
 nel capitolo?», «costruisci una cronologia degli argomenti nell’ordine della presentazione»,
 «dove i due articoli danno una spiegazione diversa dello stesso punto?».
 :::
+Nelle edizioni: [umanistica](./ambiti/umanistico#inc2-taccuino) · [scientifico-tecnologica](./ambiti/scientifico-tecnologico#inc2-taccuino) · [economico-giuridica](./ambiti/economico-giuridico#inc2-taccuino) · [inclusione](./ambiti/inclusione#inc2-taccuino).
 <!-- /ESEMPIO -->
 
 ### Che cosa si produce dalle fonti
@@ -135,6 +136,7 @@ Istruzione di sistema per la correzione di brevi risposte aperte:
 Con temperatura bassa, la stessa istruzione applicata a risposte di classi diverse produce
 giudizi confrontabili, che il docente rilegge e conferma.
 :::
+Nelle edizioni: [umanistica](./ambiti/umanistico#inc2-istruzione-sistema) · [scientifico-tecnologica](./ambiti/scientifico-tecnologico#inc2-istruzione-sistema) · [economico-giuridica](./ambiti/economico-giuridico#inc2-istruzione-sistema) · [inclusione](./ambiti/inclusione#inc2-istruzione-sistema).
 <!-- /ESEMPIO -->
 
 ### Un’applicazione web per la classe
@@ -157,6 +159,7 @@ risposta la pagina spiega in una frase perché, citando il capitolo. Alla fine m
 di risposte giuste e l’elenco delle affermazioni sbagliate da rivedere. Niente registrazione,
 niente dati salvati.»
 :::
+Nelle edizioni: [umanistica](./ambiti/umanistico#inc2-app-web) · [scientifico-tecnologica](./ambiti/scientifico-tecnologico#inc2-app-web) · [economico-giuridica](./ambiti/economico-giuridico#inc2-app-web) · [inclusione](./ambiti/inclusione#inc2-app-web).
 <!-- /ESEMPIO -->
 
 Tre cautele, da ripetere in aula. L’applicazione va provata da cima a fondo prima di darla agli
@@ -206,4 +209,7 @@ Il laboratorio ha due parti, una per strumento, e alla fine ognuno ha due oggett
 
 Il terzo incontro è un laboratorio sull’ambito della tua edizione. Porta il materiale su cui
 vuoi lavorare, indicato nell’appendice della tua edizione, e scegli la classe per cui lo
-prepari.
+prepari. Le appendici: [umanistica](./ambiti/umanistico#che-cosa-portare),
+[scientifico-tecnologica](./ambiti/scientifico-tecnologico#che-cosa-portare),
+[economico-giuridica](./ambiti/economico-giuridico#che-cosa-portare),
+[inclusione](./ambiti/inclusione#che-cosa-portare).

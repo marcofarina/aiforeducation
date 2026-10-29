@@ -35,6 +35,7 @@ Ciascun partecipante costruisce **una scheda di lavoro per una propria classe**:
 
 Esce con la scheda pronta e con l’istruzione riutilizzabile per le schede successive.
 :::
+Nelle edizioni: [umanistica](./ambiti/umanistico#inc3-laboratorio) · [scientifico-tecnologica](./ambiti/scientifico-tecnologico#inc3-laboratorio) · [economico-giuridica](./ambiti/economico-giuridico#inc3-laboratorio) · [inclusione](./ambiti/inclusione#inc3-laboratorio).
 <!-- /ESEMPIO -->
 
 ## L’errore tipico dell’ambito
@@ -46,6 +47,7 @@ dettaglio plausibile che nel testo di partenza non c’è. In una scheda per gli
 dettaglio ha la stessa autorità del resto. La verifica del punto 4 cerca proprio queste
 aggiunte.
 :::
+Nelle edizioni: [umanistica](./ambiti/umanistico#inc3-avvertenza) · [scientifico-tecnologica](./ambiti/scientifico-tecnologico#inc3-avvertenza) · [economico-giuridica](./ambiti/economico-giuridico#inc3-avvertenza) · [inclusione](./ambiti/inclusione#inc3-avvertenza).
 <!-- /ESEMPIO -->
 
 ## Verifica incrociata
