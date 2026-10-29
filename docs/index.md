@@ -17,7 +17,7 @@ features:
     details: Che cos’è l’intelligenza artificiale, come funziona un modello linguistico, come si scrive un prompt e come si verifica una risposta.
     link: /ripasso/
   - title: Corso base
-    details: Le dispense del corso base, in preparazione.
+    details: Dal primo prompt al primo materiale per la classe. Un capitolo per incontro, la libreria di prompt per compito didattico e la scheda sui dati e sulle norme.
     link: /base/
   - title: Corso intermedio
     details: Le dispense del corso intermedio, in preparazione.

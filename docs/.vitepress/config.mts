@@ -32,6 +32,25 @@ export default defineConfig({
           ]
         }
       ],
+      '/base/': [
+        {
+          text: 'Corso base',
+          items: [
+            { text: 'Il corso', link: '/base/' },
+            { text: '1 · Che cosa hai davanti', link: '/base/incontro-1' },
+            { text: '2 · Produrre materiale', link: '/base/incontro-2' },
+            { text: '3 · Usarla senza farsi male', link: '/base/incontro-3' }
+          ]
+        },
+        {
+          text: 'Strumenti',
+          items: [
+            { text: 'Libreria di prompt', link: '/base/prompt' },
+            { text: 'Scheda: dati e norme', link: '/base/scheda' },
+            { text: 'Versione da stampare', link: '/base/stampa' }
+          ]
+        }
+      ],
       '/avanzato/': [
         {
           text: 'Corso avanzato',
