@@ -46,10 +46,11 @@ Con qualsiasi strumento, anche con l’account d’istituto:
 |---|---|
 | Regolamento UE 2016/679 (GDPR) | I dati degli studenti si trattano solo per le finalità della scuola e con gli strumenti che la scuola ha autorizzato. |
 | Regolamento UE 2024/1689 (AI Act), art. 5 | Vieta i sistemi che riconoscono le emozioni negli istituti di istruzione, in vigore dal 2 febbraio 2025. |
-| Regolamento UE 2024/1689 (AI Act), allegato III | Considera ad alto rischio i sistemi usati per ammettere, valutare, orientare o sorvegliare gli studenti durante le prove. Gli obblighi relativi sono stati rinviati dal Digital Omnibus: verificare il calendario aggiornato. |
+| Regolamento UE 2024/1689 (AI Act), allegato III | Considera ad alto rischio i sistemi usati per ammettere, valutare, orientare o sorvegliare gli studenti durante le prove. Gli obblighi relativi si applicano dal 2 dicembre 2027, dopo il rinvio deciso con il regolamento (UE) 2026/1744. |
 | Legge 23 settembre 2025, n. 132, art. 4 | Sotto i quattordici anni l’accesso a strumenti di AI e il trattamento dei dati collegato richiedono il consenso di chi esercita la responsabilità genitoriale. |
 | Legge 23 settembre 2025, n. 132, art. 25 | Il diritto d’autore protegge le opere dell’ingegno umano, anche se create con l’aiuto dell’AI, purché siano frutto del lavoro intellettuale dell’autore. |
-| Decreto ministeriale 9 agosto 2025, n. 166 | Adotta le linee guida del Ministero per l’introduzione dell’intelligenza artificiale nelle istituzioni scolastiche. |
+| Decreto ministeriale 9 agosto 2025, n. 166 | Attiva sulla piattaforma UNICA il servizio del Ministero sull’intelligenza artificiale, con le Linee guida per l’introduzione dell’intelligenza artificiale nelle istituzioni scolastiche. |
+| Decreto legislativo 7 ottobre 2026, n. 179 | In vigore dal 23 ottobre 2026, adegua la normativa italiana all’AI Act, anche sull’uso dell’intelligenza artificiale nella formazione. |
 
 Per i dubbi sui dati, la persona di riferimento è il **responsabile della protezione dei dati**
 (RPD) della scuola; per l’uso degli strumenti, la dirigenza e il regolamento d’istituto, se
