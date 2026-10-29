@@ -30,6 +30,7 @@ Se il materiale non basta per svolgere il compito, fermati e dimmi che cosa manc
 Prepari esercizi di ripasso per una classe terza a partire da un materiale che ti incollo o ti
 indico.
 :::
+Nelle edizioni: [umanistica](./ambiti/umanistico#modello-gem) · [scientifico-tecnologica](./ambiti/scientifico-tecnologico#modello-gem) · [economico-giuridica](./ambiti/economico-giuridico#modello-gem) · [inclusione](./ambiti/inclusione#modello-gem).
 <!-- /ESEMPIO -->
 
 ## Scheda di prova di un Gem
@@ -55,6 +56,7 @@ Incontro 2. Da porre a un taccuino appena costruito, prima di usarlo.
 Dove il capitolo del manuale e l’articolo di approfondimento spiegano in modo diverso lo stesso
 concetto?
 :::
+Nelle edizioni: [umanistica](./ambiti/umanistico#modello-taccuino) · [scientifico-tecnologica](./ambiti/scientifico-tecnologico#modello-taccuino) · [economico-giuridica](./ambiti/economico-giuridico#modello-taccuino) · [inclusione](./ambiti/inclusione#modello-taccuino).
 <!-- /ESEMPIO -->
 
 ## Istruzione di sistema
@@ -100,6 +102,7 @@ Testo in italiano, caratteri leggibili, funziona anche da telefono.
 ::: tip Esempio di azione
 Lo studente legge un’affermazione sull’argomento e decide se è vera o falsa.
 :::
+Nelle edizioni: [umanistica](./ambiti/umanistico#modello-app-web) · [scientifico-tecnologica](./ambiti/scientifico-tecnologico#modello-app-web) · [economico-giuridica](./ambiti/economico-giuridico#modello-app-web) · [inclusione](./ambiti/inclusione#modello-app-web).
 <!-- /ESEMPIO -->
 
 ## Scheda per la libreria condivisa

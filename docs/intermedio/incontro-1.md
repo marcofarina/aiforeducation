@@ -50,6 +50,7 @@ Nel pannello laterale, con il capitolo aperto in Documenti: la stessa richiesta 
 che citano i paragrafi, usano i termini del testo e seguono l’ordine in cui gli argomenti sono
 presentati.
 :::
+Nelle edizioni: [umanistica](./ambiti/umanistico#inc1-chat-o-file) · [scientifico-tecnologica](./ambiti/scientifico-tecnologico#inc1-chat-o-file) · [economico-giuridica](./ambiti/economico-giuridico#inc1-chat-o-file) · [inclusione](./ambiti/inclusione#inc1-chat-o-file).
 <!-- /ESEMPIO -->
 
 Il secondo risultato non è automaticamente migliore. È però **controllabile**: il docente
@@ -84,6 +85,7 @@ dell’anno scorso, il programma svolto e quello dichiarato, due versioni dello 
 - Confrontare: «Metti a confronto le due verifiche: quali argomenti compaiono in una sola, e
   quale delle due è più lunga da svolgere?»
 :::
+Nelle edizioni: [umanistica](./ambiti/umanistico#inc1-tre-operazioni) · [scientifico-tecnologica](./ambiti/scientifico-tecnologico#inc1-tre-operazioni) · [economico-giuridica](./ambiti/economico-giuridico#inc1-tre-operazioni) · [inclusione](./ambiti/inclusione#inc1-tre-operazioni).
 <!-- /ESEMPIO -->
 
 Dall’app Gemini si può far riferimento a un file del proprio Drive anche senza aprirlo,
@@ -128,6 +130,7 @@ stimato, soluzione in una sezione separata alla fine.
 **Limiti.** Non introdurre argomenti che non compaiono nel materiale di partenza. Se il
 materiale non basta per sei esercizi, fermati e dimmi quanti ne puoi fare.
 :::
+Nelle edizioni: [umanistica](./ambiti/umanistico#inc1-gem) · [scientifico-tecnologica](./ambiti/scientifico-tecnologico#inc1-gem) · [economico-giuridica](./ambiti/economico-giuridico#inc1-gem) · [inclusione](./ambiti/inclusione#inc1-gem).
 <!-- /ESEMPIO -->
 
 ### Mettere alla prova un Gem

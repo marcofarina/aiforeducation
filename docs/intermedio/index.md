@@ -34,8 +34,23 @@ I primi due incontri sono uguali in tutte le edizioni. Cambiano gli esempi, che 
 prende dalla propria area disciplinare, e il laboratorio del terzo incontro, che lavora su un
 compito tipico dell’ambito.
 
+## Le quattro edizioni
+
+Ogni edizione ha un’appendice con gli esempi della propria area, il laboratorio del terzo
+incontro, l’errore tipico da cui guardarsi e una libreria di prompt per i compiti ricorrenti.
+Nei capitoli, sotto ogni esempio neutro, un rimando porta all’esempio corrispondente di
+ciascuna edizione.
+
+| Edizione | Discipline | Laboratorio del terzo incontro |
+|---|---|---|
+| [Umanistica](./ambiti/umanistico) | lettere, storia, filosofia, lingue straniere | Un percorso di lettura guidata |
+| [Scientifico-tecnologica](./ambiti/scientifico-tecnologico) | matematica, fisica, scienze, informatica, discipline d’indirizzo | Una batteria di problemi con le soluzioni |
+| [Economico-giuridica](./ambiti/economico-giuridico) | scienze umane, diritto ed economia | Un caso di studio documentato |
+| [Inclusione](./ambiti/inclusione) | dipartimento di sostegno | Un capitolo in versione multilivello |
+
 A margine dei capitoli ci sono i [modelli pronti](./modelli), da duplicare e adattare, e la
-[versione da stampare](./stampa), che raccoglie tutto in una pagina sola.
+[versione da stampare](./stampa), che raccoglie tutto in una pagina sola. Ogni edizione ha anche
+la sua versione da stampare, con i capitoli comuni e l’appendice d’ambito in fondo.
 
 ::: warning Interfacce in movimento
 Le tre applicazioni cambiano menu e funzioni nel giro di poche settimane, e non tutte le

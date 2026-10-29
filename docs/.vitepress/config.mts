@@ -43,10 +43,29 @@ export default defineConfig({
           ]
         },
         {
+          text: 'Edizioni',
+          items: [
+            { text: 'Umanistica', link: '/intermedio/ambiti/umanistico' },
+            { text: 'Scientifico-tecnologica', link: '/intermedio/ambiti/scientifico-tecnologico' },
+            { text: 'Economico-giuridica', link: '/intermedio/ambiti/economico-giuridico' },
+            { text: 'Inclusione', link: '/intermedio/ambiti/inclusione' }
+          ]
+        },
+        {
           text: 'Strumenti',
           items: [
             { text: 'Modelli pronti', link: '/intermedio/modelli' },
-            { text: 'Versione da stampare', link: '/intermedio/stampa' }
+            { text: 'Versione da stampare', link: '/intermedio/stampa' },
+            {
+              text: 'Da stampare per edizione',
+              collapsed: true,
+              items: [
+                { text: 'Umanistica', link: '/intermedio/stampa-umanistico' },
+                { text: 'Scientifico-tecnologica', link: '/intermedio/stampa-scientifico-tecnologico' },
+                { text: 'Economico-giuridica', link: '/intermedio/stampa-economico-giuridico' },
+                { text: 'Inclusione', link: '/intermedio/stampa-inclusione' }
+              ]
+            }
           ]
         }
       ],
