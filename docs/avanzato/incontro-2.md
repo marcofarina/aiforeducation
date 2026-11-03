@@ -1,10 +1,11 @@
 # Incontro 2 — Insegnare un mestiere all’agente
 
-Nel primo incontro l’agente ha imparato com’è fatta la tua cartella. In questo impara a fare
-un lavoro sempre allo stesso modo. Prima però serve una rete di sicurezza, perché un agente
-che lavora su molti file può sbagliare su molti file. Il capitolo segue l’ordine
-dell’incontro: le versioni, dove va una regola, le procedure ripetibili, come sbaglia un
-agente e come si corregge, i connettori. In fondo trovi il laboratorio e che cosa fare prima
+Nel primo incontro l’agente ha costruito una pagina a partire dai tuoi materiali. In questo
+impara a lavorare sempre allo stesso modo. Prima servono due cose: un file di istruzioni che
+l’agente rilegge a ogni sessione, perché da solo non ricorda, e una rete di sicurezza, perché
+un agente che lavora su molti file può sbagliare su molti file. Il capitolo segue l’ordine
+dell’incontro: il contesto e il file di istruzioni, le versioni, dove va una regola, le
+procedure ripetibili, come sbaglia un agente e come si corregge, i connettori. In fondo trovi il laboratorio e che cosa fare prima
 del terzo incontro.
 
 Le prove citate qui sono state fatte il 29 ottobre 2026 con Claude Code 2.1.312, sull’archivio
@@ -12,6 +13,88 @@ di una docente di storia di fantasia, Laura Bianchi: le stesse lezioni sulla Riv
 francese del primo incontro. La prova con l’app Codex e la licenza della scuola non è ancora
 stata fatta. Dove il capitolo descrive Codex, la fonte è la documentazione ufficiale, citata
 con la data in cui è stata consultata.
+
+::: warning Capitolo in revisione
+Il capitolo è stato scritto sul programma del 27 ottobre, in cui il primo incontro costruiva
+l’archivio. Con il programma del 3 novembre l’incontro 2 lavora sulla pagina pubblicata nel
+primo: esempi e laboratorio vanno adattati prima del 12 novembre.
+:::
+
+## Il contesto come risorsa finita
+
+Il pacchetto che l’harness rispedisce al modello a ogni giro, visto nel primo incontro, ha un
+limite, la **finestra di contesto**,
+che si misura in *token* (pezzi di parola). I modelli recenti ne accettano moltissimi, ma
+non conviene riempirli: oltre una certa soglia le risposte peggiorano, perché il modello
+deve tenere insieme troppe cose e le istruzioni iniziali pesano sempre meno. Quando la
+finestra si riempie l’harness riassume la conversazione per fare spazio, e nel riassunto
+qualcosa si perde.
+
+Quindi un agente dimentica in due modi. Dimentica tutto alla fine della sessione, perché il
+modello non ha memoria. E dimentica pezzi durante una sessione lunga, perché il contesto si
+riempie e viene riassunto. In tutti e due i casi le regole dette a voce all’inizio sono le
+prime a perdersi.
+
+### Il file di istruzioni: AGENTS.md
+
+La soluzione è scrivere le istruzioni stabili in un file che l’harness carica all’inizio di
+ogni sessione. In Codex si chiama `AGENTS.md` e si mette nella cartella del progetto. È lo
+stesso principio delle istruzioni permanenti di un Gem o di un progetto in ChatGPT, con due
+differenze: il file è tuo, sta fra i tuoi materiali, e funziona anche con altri agenti.
+
+Una regola sola governa il file: ci va **quello che altrimenti ripeteresti a ogni sessione**.
+Siccome viene caricato sempre, pesa su ogni giro del ciclo e sui limiti del piano: meglio
+corto. Non servono le regole che l’agente seguirebbe comunque («scrivi in modo chiaro») né
+quelle troppo vaghe per controllarle («cura la qualità»). Servono quelle che cambiano il
+risultato: com’è fatta la cartella, quali file non si toccano, il registro adatto alla
+classe, che cosa riferire alla fine. Quando esce un modello nuovo conviene rileggerlo e
+togliere quello che non serve più (anche questo suggerimento viene dal workshop di Hallie,
+lezione 2).
+
+I file si possono **annidare**. Codex legge l’`AGENTS.md` della radice del progetto e poi
+quelli delle sottocartelle, fino alla cartella in cui lavora, e li mette in fila dal
+generale al particolare: le regole più vicine al lavoro vengono per ultime e prevalgono.
+Così `archivio/AGENTS.md` dice chi sei e come scrivi, e `archivio/verifiche/AGENTS.md`
+aggiunge solo le regole delle verifiche. Il totale caricato ha un limite, 32 KiB per
+impostazione predefinita, cioè una decina di pagine: un motivo in più per scrivere corto.
+Fonte: [documentazione di Codex su AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md),
+consultata il 29 ottobre 2026.
+
+Un modello di partenza per un docente di materia non tecnica è nei
+[modelli pronti](./modelli#file-di-istruzioni-di-partenza).
+
+### Chi scrive la memoria
+
+Esiste anche una memoria scritta dall’agente. Codex può prendere appunti da solo sulle
+sessioni passate e rileggerli nelle successive; nell’app la funzione è spenta per
+impostazione predefinita e si accende dalle impostazioni di personalizzazione. La
+documentazione stessa la presenta come un aiuto al ricordo, non come un posto affidabile per
+le regole. Fonte: [memorie di Codex](https://learn.chatgpt.com/docs/customization/memories),
+consultata il 29 ottobre 2026.
+
+La distinzione da tenere è questa. In `AGENTS.md` scrive il docente: sa che cosa c’è, lo
+rilegge, lo corregge. Le memorie automatiche le scrive l’agente: comode, ma non si sa bene
+che cosa contengano né quando cambino. Le regole che contano vanno nel file.
+
+## Il contesto consuma il piano
+
+Ogni giro del ciclo rispedisce tutto il contesto, quindi una sessione lunga costa più di una
+corta, e il costo cresce più in fretta della durata. Con un abbonamento il costo non si
+paga in euro ma in limiti d’uso: i messaggi disponibili in una finestra di alcune ore
+finiscono prima. Tre situazioni pesano più delle altre:
+
+- **la sessione lunga**, che accumula file letti e risultati di comandi;
+- **la ripresa dopo una pausa**: gli harness tengono per un po’ una copia pronta del contesto
+  (la *cache*), e quando scade il modello deve rileggere tutto da capo;
+- **il cambio di modello a metà**, che fa ripartire da zero anche la cache.
+
+Le abitudini che ne derivano sono semplici. Una sessione per compito, e una nuova quando il
+compito cambia. Quando una sessione si allunga ma il lavoro non è finito, chiedere all’agente
+un riassunto di che cosa è stato fatto e che cosa resta, e ripartire da lì in una sessione
+nuova. Scegliere il modello in base al compito: un modello veloce per convertire file o
+riordinare una cartella, uno più capace, con più sforzo di ragionamento, per progettare una
+verifica. La scelta del modello e quella dello sforzo sono due leve diverse, e nell’app si
+regolano separatamente.
 
 ## Le versioni: git e i commit
 
@@ -299,6 +382,33 @@ l’agente ha letto la griglia attraverso il connettore e ha scritto la scheda, 
 indicatori tradotti in cose da saper fare sulla lezione e la durata dell’interrogazione segnata
 «da verificare». È un esempio di connettore in sola lettura, ed è anche un esempio di come si
 configura per tentativi: la prima prova serve a capire che cosa il connettore vede.
+
+## Laboratorio: il primo file di istruzioni
+
+In una conversazione nuova, chiedi all’agente di intervistarti prima di scrivere
+`AGENTS.md`:
+
+```text
+Voglio scrivere il file AGENTS.md di questa cartella, con le istruzioni che dovrai
+seguire ogni volta che lavori qui. Prima intervistami: fammi una domanda alla volta e
+aspetta la mia risposta, al massimo dieci domande. Chiedimi che cosa insegno e a quali
+classi, che cosa contiene la cartella e come è organizzata, come voglio i testi che
+produci, che cosa non devi fare mai, come capisco che un lavoro è finito. Guarda i file
+della cartella prima di fare domande a cui puoi rispondere da solo. Alla fine scrivi
+AGENTS.md nella radice della cartella, al massimo trenta righe, e non modificare
+nient’altro.
+```
+
+Poi apri il file e sfoltiscilo a mano: via le righe che l’agente seguirebbe comunque, quelle
+troppo vaghe per controllarle, quelle ripetute. Aggiungi almeno una regola che si vede subito
+nel risultato, per esempio «ogni scheda comincia con classe e argomento». Infine prova il file
+in una conversazione nuova: chiedi all’agente che cosa sa della cartella, poi un compito
+piccolo che metta alla prova quella regola. Se non la rispetta, correggi il file, non la
+richiesta.
+
+L’intervista prima del lavoro è un’idea che torna nel terzo incontro, e che usano anche gli
+autori degli strumenti: farsi fare domande una alla volta fa emergere quello che non si era
+pensato di dire.
 
 ## Laboratorio: due procedure sul proprio archivio
 

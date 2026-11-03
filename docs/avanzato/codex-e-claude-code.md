@@ -11,6 +11,8 @@ con l’app Codex e la licenza della scuola non sono ancora state fatte.
 
 | Concetto | Codex | Claude Code | Provato il |
 |---|---|---|---|
+| Cartella di lavoro | Si apre dall’app; l’agente vede quella cartella e non il resto del computer (doc.) | Si avvia dentro la cartella; alla prima apertura chiede se ci si fida dei file che contiene (doc.) | — |
+| Registro delle azioni | File letti, comandi eseguiti e file scritti compaiono nella conversazione; la forma nell’app è da verificare | Ogni strumento usato compare nella conversazione, con l’esito | — |
 | File di istruzioni del progetto | `AGENTS.md` nella cartella del progetto; uno globale in `~/.codex` (doc.) | `CLAUDE.md`; non legge `AGENTS.md` da solo, ma `CLAUDE.md` può importarlo con la riga `@AGENTS.md` (doc.) | Claude Code: il repository di queste dispense usa l’importazione, 29/10/2026 |
 | Istruzioni annidate per cartella | Dalla radice del progetto alla cartella di lavoro, al massimo un file per cartella, fino a 32 KiB in tutto (doc.) | `CLAUDE.md` nelle sottocartelle, letti quando l’agente lavora lì (doc.) | — |
 | Memorie scritte dall’agente | Memorie di Codex, spente per impostazione predefinita; Impostazioni › Personalizzazione (doc.) | Memoria automatica (doc.) | — |
@@ -25,4 +27,4 @@ con l’app Codex e la licenza della scuola non sono ancora state fatte.
 | Lavoro ripreso in una sessione nuova | Un file di piano con la sezione dello stato, letto a parole («continua il lavoro su…») | Lo stesso | Claude Code: piano scritto in una sessione, eseguito in altre due ripartendo dallo stato, 29/10/2026, versione 2.1.312 |
 | Obiettivo con condizione di fine | Comando `/goal`; disponibilità nell’app riportata solo da fonti secondarie (doc.) | Comando `/goal`, con un secondo modello che giudica la condizione (doc.) | — (il corso usa la condizione scritta nel piano) |
 | Sotto-agenti | Sotto-agenti e agenti personalizzati in `.codex/agents/`, su Plus e piani superiori (doc.) | Sotto-agenti lanciati dall’agente principale, anche in parallelo | Claude Code: tre revisori in parallelo per la revisione a più voci, 29/10/2026, versione 2.1.312 |
-| Pubblicare su GitHub | Da verificare: se l’app pubblica con git e come si autentica su GitHub | Con git, chiesto a parole, se sul computer git è collegato a GitHub (doc.) | — (nel laboratorio la pagina si carica dal browser) |
+| Pubblicare su GitHub | Nel primo incontro non serve l’agente: `index.html` si carica dal sito di GitHub e si pubblica con Pages. Se l’app pubblica anche con git, e come si autentica, è da verificare | Con git, chiesto a parole, se sul computer git è collegato a GitHub (doc.) | — |

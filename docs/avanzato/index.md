@@ -1,13 +1,14 @@
 # Dall’assistente all’agente
 
-Agenti, archivi personali e procedure ripetibili con ChatGPT e Codex. Corso avanzato, dieci
+Agenti, pagine pubblicate e procedure ripetibili con ChatGPT e Codex. Corso avanzato, dieci
 ore in tre incontri.
 
 Un agente non si limita a rispondere: legge i file di una cartella, li modifica, esegue comandi
-e riferisce l’esito. Durante il corso ogni partecipante costruisce un archivio dei propri
-materiali didattici che un agente sa usare, con le istruzioni che lo governano e alcune
-procedure ripetibili, e ne pubblica una parte in rete. Si lavora con ChatGPT e con l’app Codex
-sul proprio portatile; Claude Code compare come termine di confronto.
+e riferisce l’esito. Nel primo incontro ogni partecipante costruisce con l’agente una pagina di
+esercizi interattivi a partire dai propri materiali e la pubblica in rete. Nel secondo la mette
+sotto controllo di versione e insegna all’agente a produrne di nuove sempre allo stesso modo. Nel
+terzo organizza i propri materiali in un archivio che l’agente sa consultare. Si lavora con
+ChatGPT e con l’app Codex sul proprio portatile; Claude Code compare come termine di confronto.
 
 ## Come usare queste dispense
 

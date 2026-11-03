@@ -1,37 +1,52 @@
 # Incontro 1 — Dalla chat all’agente
 
 Questo capitolo riprende il primo incontro: che cosa cambia quando il modello può lavorare sui
-file, com’è fatto un agente, perché dimentica e come gli si danno istruzioni che durano. In
-fondo trovi la traccia del laboratorio e che cosa preparare per il secondo incontro.
+file, com’è fatto un agente, come si apre una cartella in Codex e con quali permessi, che cos’è
+una pagina web, come si revisiona e come si pubblica. In fondo trovi la traccia del
+laboratorio, in cui ognuno costruisce e pubblica una pagina di esercizi per la propria
+materia, e che cosa preparare per il secondo incontro.
 
 ## Lo stesso compito a una chat e a un agente
 
-In aula abbiamo affidato lo stesso compito a tre strumenti. Nella cartella c’erano quattro
-lezioni di storia per una quarta sulla Rivoluzione francese, in formati diversi (un file
-Word, un PDF, un file Markdown, degli appunti in testo semplice) e una verifica. La richiesta
-era sempre la stessa:
+In aula abbiamo affidato lo stesso compito a tre strumenti: ChatGPT, Codex e Claude Code.
+Nella cartella c’erano gli appunti di una lezione di storia sul 1789 per una quarta, in
+Markdown, e una vecchia verifica sullo stesso argomento in Word, entrambi di fantasia. La
+richiesta era ricavarne una pagina web di esercizi interattivi:
 
 ```text
-In questa cartella ci sono le mie lezioni di storia per una classe quarta sulla Rivoluzione
-francese, in formati diversi, e una verifica. Per ogni lezione prepara una scheda di ripasso
-in Markdown nella cartella ripasso/: al massimo una pagina, con i concetti chiave, le date da
-ricordare e tre domande di autoverifica. Poi scrivi indice.md con l’elenco delle lezioni e
-delle schede, e segnala quali lezioni non hanno ancora una verifica. Non modificare i file
-originali.
+In questa cartella c’è il materiale di una mia lezione di storia per una classe quarta sul
+1789 in Francia: gli appunti e una vecchia verifica. Ricava da questo materiale una pagina
+web di esercizi interattivi per gli studenti, in un solo file index.html, senza risorse
+esterne:
+
+- un esercizio di ordinamento: gli eventi del 1789 da mettere in ordine cronologico;
+- un esercizio di abbinamento: i termini della lezione con il loro significato;
+- un esercizio di completamento: un breve testo con alcune parole mancanti.
+
+Ogni esercizio ha un pulsante «Controlla» che segnala le risposte sbagliate e spiega l’errore
+con una frase presa dagli appunti. Usa solo informazioni presenti nel materiale. La pagina
+deve funzionare anche da telefono: niente trascinamento, usa menu a tendina o pulsanti. Non
+modificare i file che ci sono già. Alla fine dimmi che cosa hai creato e da quali file hai
+preso le informazioni.
 ```
 
-Con ChatGPT i file vanno caricati uno per uno, e le schede tornano come testo nella
-conversazione: la cartella `ripasso/` non esiste finché qualcuno non la crea e non ci salva
-dentro le schede. Con un agente, Codex o Claude Code, la richiesta si scrive nella cartella
-stessa. L’agente apre i file, ne estrae il testo, scrive le schede e l’indice, e alla fine
-dice che cosa ha fatto. Quando il lavoro finisce i file sono già al loro posto.
+Con ChatGPT i file vanno allegati alla conversazione, e la pagina torna come codice nella
+risposta: per usarla bisogna copiarla in un file, salvarlo con il nome giusto e aprirlo. Con
+un agente la richiesta si scrive nella cartella stessa. L’agente apre i file, ne estrae il
+testo, scrive `index.html` e alla fine dice che cosa ha fatto. Quando il lavoro finisce la
+pagina è già al suo posto.
+
+::: warning Da completare dopo la demo
+Qui compariranno la data della demo, le versioni delle app e che cosa è uscito da ciascuno
+strumento, compresi gli errori trovati confrontando la pagina con gli appunti.
+:::
 
 La differenza non sta nel modello, che può essere lo stesso, ma in quello che il modello ha
 il permesso di fare. Una chat risponde; un agente **legge, scrive ed esegue**, e quindi
 sposta il lavoro del docente: meno copia e incolla, più controllo. Il controllo resta
-necessario. Nella prova con Claude Code del 29 ottobre 2026 l’agente ha segnalato, sicuro,
-che un elenco della lezione 3 «si interrompe a metà». Non era vero, e lo si scopre solo
-aprendo il file originale.
+necessario. In una prova con Claude Code del 29 ottobre 2026, su un compito simile (schede di
+ripasso ricavate da quattro lezioni), l’agente ha segnalato, sicuro, che un elenco della
+lezione 3 «si interrompe a metà». Non era vero, e lo si scopre solo aprendo il file originale.
 
 ## Che cos’è un agente
 
@@ -64,7 +79,7 @@ l’harness gli rispedisce tutto quello che serve:
 
 Lo schema viene dal workshop di Lydia Hallie (Anthropic) su Claude Code, primavera 2026,
 lezione 1, che qui riprendiamo con parole nostre. Ha due conseguenze pratiche, su cui torna
-il resto del capitolo. La prima: tutto quello che l’agente «sa» di una sessione sta in quel
+il secondo incontro. La prima: tutto quello che l’agente «sa» di una sessione sta in quel
 pacchetto, e quando la sessione si chiude il pacchetto se ne va. La seconda: il pacchetto
 cresce a ogni giro, e ha un limite.
 
@@ -72,13 +87,37 @@ cresce a ogni giro, e ha un limite.
 
 Se l’harness scrive le istruzioni di sistema, sceglie gli strumenti e decide che cosa
 rispedire, allora due harness diversi con lo stesso modello producono risultati diversi.
-Nella demo Codex e Claude Code hanno ricevuto la stessa richiesta e hanno prodotto schede
-simili ma non uguali: hanno letto i file con strumenti diversi, hanno chiesto permessi in
-momenti diversi, hanno scritto indici con colonne diverse.
+Nella demo Codex e Claude Code ricevono la stessa richiesta: dove le due pagine differiscono,
+la differenza viene dall’harness, cioè da come ciascuno legge i file, da quando chiede i
+permessi e da quali istruzioni di sistema dà al modello.
 
 Per chi impara conta una cosa: il metodo del corso (una cartella di file di testo, un file di
 istruzioni, procedure scritte, permessi stretti) vale per qualsiasi harness. Cambiano i nomi
 e i menu, e la tabella [Codex e Claude Code](./codex-e-claude-code) li mette a confronto.
+
+## L’app Codex
+
+Codex è una modalità dell’app desktop di ChatGPT: si sceglie dal selettore in alto, e da lì
+si lavora su una cartella del proprio computer invece che in una conversazione sola. Su macOS
+l’app è disponibile solo per i Mac con processore Apple; su Windows si installa dal Microsoft
+Store. Fonte: documentazione di Codex, consultata il 27 ottobre 2026.
+
+Le parti dell’app che servono nel corso sono poche:
+
+| Parte | A che cosa serve |
+|---|---|
+| la cartella aperta | il progetto su cui l’agente lavora: vede quella cartella, non il resto del computer |
+| il campo di scrittura | la richiesta, come in una chat |
+| la scelta del modello e dello sforzo | un modello veloce per i lavori semplici, uno più capace e con più ragionamento per quelli difficili |
+| il selettore dei permessi | sotto il campo di scrittura: che cosa l’agente può fare senza chiedere |
+| il registro delle azioni | i file letti, i comandi eseguiti, i file scritti, in ordine |
+| la sessione nuova | un compito nuovo parte da una sessione nuova, senza il peso della precedente |
+
+::: warning Da verificare in aula
+I nomi e la posizione di queste voci vengono dalla documentazione e cambiano da una versione
+all’altra dell’app. Con la licenza della scuola non sono ancora stati provati: quando lo
+saranno, qui compariranno la data e la versione.
+:::
 
 ## Le basi informatiche del lavoro agentico
 
@@ -106,9 +145,8 @@ Un PDF sta nel mezzo: si legge, ma è fatto per essere stampato, non modificato.
 
 Nella prova con Claude Code l’agente ha letto subito il Markdown, il testo e il PDF. Per i
 due file Word ha dovuto eseguire un programma di conversione, e quando non aveva il permesso
-di farlo si è fermato: tre schede su quattro, con la quarta segnata «da fare». Per questo il
-laboratorio converte in testo i materiali più usati. L’originale resta dov’è, e l’agente
-lavora sulla copia in Markdown.
+di farlo si è fermato: tre schede su quattro, con la quarta segnata «da fare». Per questo, quando un materiale si usa spesso con l’agente, conviene
+tenerne una copia in Markdown accanto all’originale.
 
 ### Il Markdown
 
@@ -129,81 +167,6 @@ d’ora.
 Queste dispense sono scritte in Markdown: il pulsante in fondo a ogni pagina apre il file
 sorgente.
 
-## Il contesto come risorsa finita
-
-Il pacchetto che l’harness rispedisce a ogni giro ha un limite, la **finestra di contesto**,
-che si misura in *token* (pezzi di parola). I modelli recenti ne accettano moltissimi, ma
-non conviene riempirli: oltre una certa soglia le risposte peggiorano, perché il modello
-deve tenere insieme troppe cose e le istruzioni iniziali pesano sempre meno. Quando la
-finestra si riempie l’harness riassume la conversazione per fare spazio, e nel riassunto
-qualcosa si perde.
-
-Quindi un agente dimentica in due modi. Dimentica tutto alla fine della sessione, perché il
-modello non ha memoria. E dimentica pezzi durante una sessione lunga, perché il contesto si
-riempie e viene riassunto. In tutti e due i casi le regole dette a voce all’inizio sono le
-prime a perdersi.
-
-### Il file di istruzioni: AGENTS.md
-
-La soluzione è scrivere le istruzioni stabili in un file che l’harness carica all’inizio di
-ogni sessione. In Codex si chiama `AGENTS.md` e si mette nella cartella del progetto. È lo
-stesso principio delle istruzioni permanenti di un Gem o di un progetto in ChatGPT, con due
-differenze: il file è tuo, sta fra i tuoi materiali, e funziona anche con altri agenti.
-
-Una regola sola governa il file: ci va **quello che altrimenti ripeteresti a ogni sessione**.
-Siccome viene caricato sempre, pesa su ogni giro del ciclo e sui limiti del piano: meglio
-corto. Non servono le regole che l’agente seguirebbe comunque («scrivi in modo chiaro») né
-quelle troppo vaghe per controllarle («cura la qualità»). Servono quelle che cambiano il
-risultato: com’è fatta la cartella, quali file non si toccano, il registro adatto alla
-classe, che cosa riferire alla fine. Quando esce un modello nuovo conviene rileggerlo e
-togliere quello che non serve più (anche questo suggerimento viene dal workshop di Hallie,
-lezione 2).
-
-I file si possono **annidare**. Codex legge l’`AGENTS.md` della radice del progetto e poi
-quelli delle sottocartelle, fino alla cartella in cui lavora, e li mette in fila dal
-generale al particolare: le regole più vicine al lavoro vengono per ultime e prevalgono.
-Così `archivio/AGENTS.md` dice chi sei e come scrivi, e `archivio/verifiche/AGENTS.md`
-aggiunge solo le regole delle verifiche. Il totale caricato ha un limite, 32 KiB per
-impostazione predefinita, cioè una decina di pagine: un motivo in più per scrivere corto.
-Fonte: [documentazione di Codex su AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md),
-consultata il 29 ottobre 2026.
-
-Un modello di partenza per un docente di materia non tecnica è nei
-[modelli pronti](./modelli#file-di-istruzioni-di-partenza).
-
-### Chi scrive la memoria
-
-Esiste anche una memoria scritta dall’agente. Codex può prendere appunti da solo sulle
-sessioni passate e rileggerli nelle successive; nell’app la funzione è spenta per
-impostazione predefinita e si accende dalle impostazioni di personalizzazione. La
-documentazione stessa la presenta come un aiuto al ricordo, non come un posto affidabile per
-le regole. Fonte: [memorie di Codex](https://learn.chatgpt.com/docs/customization/memories),
-consultata il 29 ottobre 2026.
-
-La distinzione da tenere è questa. In `AGENTS.md` scrive il docente: sa che cosa c’è, lo
-rilegge, lo corregge. Le memorie automatiche le scrive l’agente: comode, ma non si sa bene
-che cosa contengano né quando cambino. Le regole che contano vanno nel file.
-
-## Il contesto consuma il piano
-
-Ogni giro del ciclo rispedisce tutto il contesto, quindi una sessione lunga costa più di una
-corta, e il costo cresce più in fretta della durata. Con un abbonamento il costo non si
-paga in euro ma in limiti d’uso: i messaggi disponibili in una finestra di alcune ore
-finiscono prima. Tre situazioni pesano più delle altre:
-
-- **la sessione lunga**, che accumula file letti e risultati di comandi;
-- **la ripresa dopo una pausa**: gli harness tengono per un po’ una copia pronta del contesto
-  (la *cache*), e quando scade il modello deve rileggere tutto da capo;
-- **il cambio di modello a metà**, che fa ripartire da zero anche la cache.
-
-Le abitudini che ne derivano sono semplici. Una sessione per compito, e una nuova quando il
-compito cambia. Quando una sessione si allunga ma il lavoro non è finito, chiedere all’agente
-un riassunto di che cosa è stato fatto e che cosa resta, e ripartire da lì in una sessione
-nuova. Scegliere il modello in base al compito: un modello veloce per convertire file o
-riordinare una cartella, uno più capace, con più sforzo di ragionamento, per progettare una
-verifica. La scelta del modello e quella dello sforzo sono due leve diverse, e nell’app si
-regolano separatamente.
-
 ## Permessi e sandbox
 
 Un agente che può scrivere ed eseguire può anche sbagliare sui tuoi file. Per questo ogni
@@ -213,8 +176,8 @@ comandi che restano lì dentro, senza rete. I **permessi** stabiliscono quando l
 ferma e chiede: per uscire dalla cartella, per andare in rete, per eseguire un comando
 non previsto.
 
-Secondo la documentazione di Codex (consultata il 29 ottobre 2026), una cartella sotto
-controllo di versione si apre con il permesso di modificare i file al suo interno, mentre una
+Secondo la documentazione di Codex (consultata il 29 ottobre 2026), una cartella
+sotto controllo di versione (git, che vediamo nel secondo incontro) si apre con il permesso di modificare i file al suo interno, mentre una
 cartella qualsiasi si apre in **sola lettura** finché non le si dà fiducia. Il permesso si
 cambia dal selettore sotto il campo di scrittura; l’accesso completo, senza recinto e senza
 domande, esiste ma non serve a niente di quello che facciamo nel corso. Fonte:
@@ -232,51 +195,170 @@ solo permesso di modificare i file l’agente non ha potuto eseguire il programm
 di eseguire quel programma ha finito il lavoro. Un permesso stretto non impedisce di
 lavorare: dà un punto in cui decidi tu.
 
-## Laboratorio: la cartella dell’archivio e il primo file di istruzioni
+## Che cos’è una pagina HTML
 
-::: warning Procedura non ancora provata con Codex
-I passi sono stati scritti a partire dalla documentazione e dalla prova con Claude Code del
-29 ottobre 2026. La prova con l’app Codex e la licenza della scuola non è ancora stata fatta:
-quando lo sarà, qui compariranno la data e la versione dell’app.
+Una pagina web è un file di testo con l’estensione `.html`. Il browser lo legge e lo
+trasforma in quello che si vede: titoli, paragrafi, menu, pulsanti. Dentro il file
+convivono tre linguaggi, ciascuno con un compito.
+
+| Linguaggio | Che cosa descrive | Nella pagina di esercizi |
+|---|---|---|
+| HTML | la struttura | le consegne, i menu a tendina, il pulsante «Controlla» |
+| CSS | l’aspetto | colori, caratteri, impaginazione su schermo largo e stretto |
+| JavaScript | il comportamento | che cosa succede quando si preme «Controlla» |
+
+Nella pagina del laboratorio i tre linguaggi stanno nello stesso file, `index.html`. Per
+questo basta un doppio clic per aprirla, e c’è un solo file da pubblicare. La richiesta
+«senza risorse esterne» va nella stessa direzione: la pagina non scarica niente da altri siti,
+quindi funziona anche senza rete e non fa sapere a terzi chi la apre.
+
+Per usare l’agente non serve saper scrivere HTML, ma conviene aprire almeno una volta il file
+come testo, con un editor o dal browser con «Visualizza sorgente», e riconoscere dove stanno
+le consegne e le soluzioni. Le soluzioni sono scritte nel file, e uno studente che apre il
+sorgente le legge. Per un esercizio di autoverifica non è un problema; per una prova valutata
+una pagina così non va bene.
+
+## Come si revisiona una pagina generata
+
+Una pagina di esercizi si giudica in pochi secondi dall’aspetto, ed è la parte che l’agente
+sbaglia meno. Gli errori che contano stanno altrove: una soluzione sbagliata, una spiegazione
+dell’errore che il materiale non contiene, una correzione che rifiuta la risposta giusta
+perché scritta con la maiuscola. Il valore della pagina sta nel materiale da cui parte e
+nella revisione di chi la pubblica.
+
+La revisione si fa in tre passi.
+
+1. **Leggere quello che l’agente dichiara.** Alla fine del lavoro Codex dice che cosa ha
+   creato e da quali file ha preso le informazioni. È una dichiarazione, non una prova: serve
+   a sapere dove guardare.
+2. **Svolgere gli esercizi come uno studente, sbagliando apposta.** Ogni esercizio va provato
+   con una risposta giusta, una sbagliata e una giusta scritta in modo diverso.
+3. **Confrontare ogni soluzione con il materiale originale**, non con la memoria. È il passo
+   più lungo, e nessuno può farlo al posto del docente.
+
+Le correzioni si chiedono una alla volta, indicando il punto esatto: «nel secondo esercizio
+la risposta corretta alla domanda 3 è “Assemblea nazionale”, non “Stati generali”». Una
+richiesta generica come «controlla che le soluzioni siano giuste» produce una nuova
+dichiarazione di correttezza, non una verifica. Dopo ogni correzione si ricarica la pagina
+nel browser e si ricontrolla il punto corretto, e anche quelli vicini: l’agente riscrive il
+file, e a volte cambia più di quanto gli si è chiesto.
+
+La lista di controllo completa è nella traccia del laboratorio, in fondo al capitolo.
+
+## Pubblicare: GitHub e le Pages
+
+GitHub è un servizio che conserva **repository**: cartelle di file con la loro storia. È nato
+per il codice, ma un repository può contenere qualsiasi file, e queste dispense ne sono un
+esempio. Le **GitHub Pages** sono il servizio di GitHub che prende i file di un repository e
+li pubblica come sito, a un indirizzo nella forma `https://nome-utente.github.io/nome-repository/`.
+La pagina d’ingresso è il file `index.html` nella radice del repository.
+
+Due fatti decidono come si lavora nel corso. Con l’account gratuito, Pages pubblica solo da un
+repository **pubblico**: chiunque può leggere non solo la pagina ma tutti i file del
+repository. E per pubblicare git non serve: il file si carica trascinandolo nel browser, e
+Pages lo mette in rete entro qualche minuto (GitHub dichiara fino a dieci). Git serve quando
+la pagina cambia spesso e se ne vuole tenere la storia, e arriva nel secondo incontro, quando
+c’è già una pagina da proteggere. Fonte:
+[documentazione di GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site),
+consultata il 3 novembre 2026.
+
+### Che cosa si può pubblicare
+
+Una pagina su GitHub Pages la trova chiunque abbia l’indirizzo, e i motori di ricerca possono
+indicizzarla. Prima di caricarla:
+
+- **nessun dato personale**: niente nomi di studenti, foto, voti o classi riconoscibili,
+  nemmeno dentro un esempio;
+- **solo materiale proprio**, o con una licenza che ne permette la pubblicazione: una breve
+  citazione con la fonte è in genere ammessa, un capitolo di manuale copiato no, e lo stesso
+  vale per le immagini;
+- **il nome utente compare nell’indirizzo**: conviene sceglierne uno che si è disposti a
+  mostrare a studenti e famiglie;
+- **tutto il repository è leggibile**, non solo la pagina: ci va solo quello che serve alla
+  pagina.
+
+## Laboratorio: una pagina di esercizi, dalla cartella alla rete
+
+::: warning Procedura non ancora provata
+I passi vengono dalla documentazione di Codex (27 ottobre 2026) e di GitHub (3 novembre 2026).
+La prova con l’app Codex, la licenza della scuola e un account GitHub non è ancora stata
+fatta: quando lo sarà, qui compariranno la data e le versioni.
 :::
 
-**Parte A, la cartella.** Crea una cartella `archivio` con dentro `originali`, e copiaci (non
-spostare) una decina di tuoi materiali, senza dati di studenti. Apri `archivio` in Codex e
-controlla il permesso: se è in sola lettura, scegli quello che consente di modificare i file
-della cartella. Chiedi all’agente di elencare i file con formato e argomento, poi di
-convertire in Markdown, nella cartella `testi`, i tre che usi più spesso, senza toccare gli
-originali e dicendo che cosa non è riuscito a convertire. Confronta un file convertito con il
-suo originale.
+È lo stesso lavoro dell’ultimo incontro dell’intermedio in Google AI Studio, con due
+differenze: i file restano sul tuo computer, e la pagina si pubblica su GitHub, senza i limiti
+degli account gratuiti di AI Studio.
 
-**Parte B, il primo file di istruzioni.** In una conversazione nuova, chiedi all’agente di
-intervistarti prima di scrivere `AGENTS.md`:
+**Parte A, la cartella.** Crea nei Documenti una cartella `pagina` e copiaci (non spostare)
+due o tre tuoi materiali su un solo argomento: una lettura, gli appunti di una lezione, un
+vecchio esercizio, senza dati di studenti. Apri `pagina` in Codex. Siccome la cartella non è
+sotto git, Codex la apre in sola lettura: dal selettore dei permessi scegli la voce che
+permette di modificare i file della cartella. Poi chiedi all’agente di elencare i file con il
+formato e l’argomento di ciascuno.
+
+**Parte B, la pagina.** Scegli il tipo di esercizio più adatto al tuo materiale:
+completamento (un testo con le parole chiave mancanti), abbinamento (termini e definizioni,
+opere e autori), ordinamento (le fasi di un processo, gli eventi di un periodo),
+classificazione (parole da assegnare a una categoria), scelta con spiegazione (un caso con
+tre soluzioni commentate). Adatta e lancia il prompt:
 
 ```text
-Voglio scrivere il file AGENTS.md di questa cartella, con le istruzioni che dovrai
-seguire ogni volta che lavori qui. Prima intervistami: fammi una domanda alla volta e
-aspetta la mia risposta, al massimo dieci domande. Chiedimi che cosa insegno e a quali
-classi, che cosa contiene la cartella e come è organizzata, come voglio i testi che
-produci, che cosa non devi fare mai, come capisco che un lavoro è finito. Guarda i file
-della cartella prima di fare domande a cui puoi rispondere da solo. Alla fine scrivi
-AGENTS.md nella radice della cartella, al massimo trenta righe, e non modificare
-nient’altro.
+In questa cartella c’è il materiale di una mia lezione di [materia] per una classe [classe]
+su [argomento]. Ricava da questo materiale una pagina web di esercizi interattivi per gli
+studenti, in un solo file index.html, senza risorse esterne:
+
+- [primo esercizio: tipo e contenuto, per esempio «un esercizio di abbinamento fra i termini
+  della lezione e il loro significato»];
+- [secondo esercizio, se serve].
+
+Ogni esercizio ha un pulsante «Controlla» che segnala le risposte sbagliate e spiega l’errore
+con una frase presa dal materiale. Usa solo informazioni presenti nel materiale. La pagina
+deve funzionare anche da telefono: niente trascinamento, usa menu a tendina o pulsanti. Non
+modificare i file che ci sono già. Alla fine dimmi che cosa hai creato e da quali file hai
+preso le informazioni.
 ```
 
-Poi apri il file e sfoltiscilo a mano: via le righe che l’agente seguirebbe comunque, quelle
-troppo vaghe per controllarle, quelle ripetute. Aggiungi almeno una regola che si vede subito
-nel risultato, per esempio «ogni scheda comincia con classe e argomento». Infine prova il file
-in una conversazione nuova: chiedi all’agente che cosa sa della cartella, poi un compito
-piccolo che metta alla prova quella regola. Se non la rispetta, correggi il file, non la
-richiesta.
+Apri `index.html` nel browser con un doppio clic e svolgi gli esercizi, sbagliando apposta
+almeno una risposta.
 
-L’intervista prima del lavoro è un’idea che torna nel terzo incontro, e che usano anche gli
-autori degli strumenti: farsi fare domande una alla volta fa emergere quello che non si era
-pensato di dire.
+**Parte C, la revisione.** Passa la lista di controllo e chiedi a Codex le correzioni una alla
+volta, come nella sezione sulla revisione:
+
+- ogni consegna è chiara per uno studente della classe indicata;
+- ogni soluzione è corretta, verificata sul materiale originale;
+- la correzione accetta le risposte giuste scritte in modo diverso (maiuscole, accenti,
+  spazi), oppure l’esercizio non chiede di scrivere;
+- le spiegazioni degli errori dicono una cosa vera, presa dal materiale;
+- nella pagina non compaiono dati personali;
+- nessun testo di terzi è riprodotto per intero;
+- con la finestra del browser stretta come un telefono la pagina si legge e gli esercizi si
+  svolgono.
+
+**Parte D, la pubblicazione.**
+
+1. Su github.com crea un repository nuovo (icona **+** in alto a destra, **New repository**):
+   nome breve senza spazi né accenti, per esempio `esercizi-storia`; visibilità **Public**;
+   **Add README** attivo; poi **Create repository**.
+2. Dal menu **Add file** scegli **Upload files**, trascina `index.html` dalla cartella
+   `pagina` e conferma sul ramo `main`.
+3. Apri **Settings**, poi **Pages**. Sotto **Build and deployment**, in **Source** scegli
+   **Deploy from a branch**; come ramo `main`, come cartella la radice; poi **Save**.
+4. Aspetta che in cima alla pagina **Pages** compaia l’indirizzo del sito, con il pulsante
+   **Visit site**. Se risponde con un errore 404, aspetta qualche minuto e ricarica.
+5. Apri l’indirizzo dal telefono e svolgi un esercizio.
+
+| Se succede… | Probabilmente… | Allora… |
+|---|---|---|
+| Codex dice che non può scrivere il file | la cartella è aperta in sola lettura | cambia il permesso dal selettore sotto il campo di scrittura |
+| l’indirizzo risponde 404 anche dopo dieci minuti | il file non si chiama esattamente `index.html`, o è in una sottocartella | rinominalo o spostalo nella radice del repository |
+| in **Pages** non compare la scelta del ramo | il repository è privato | rendilo pubblico da **Settings**, o creane uno nuovo pubblico |
+| dal telefono gli esercizi non rispondono al tocco | la pagina usa il trascinamento | chiedi a Codex menu a tendina o pulsanti al posto del trascinamento |
+| dopo una correzione la pagina online è ancora la vecchia | il file nuovo non è stato caricato, o il browser mostra la copia precedente | carica di nuovo `index.html` e ricarica la pagina dopo qualche minuto |
 
 ## Prima del prossimo incontro
 
-- Usa l’agente sulla tua cartella almeno due volte, in due giorni diversi, e annota ogni
-  regola che ti sei trovato a ripetere: probabilmente va in `AGENTS.md`.
-- Converti in Markdown altri materiali che usi spesso.
-- Scegli il compito ripetitivo che hai descritto nella mail prima del corso: nel secondo
+- Se non hai pubblicato in aula, pubblica la pagina seguendo la parte D e manda l’indirizzo.
+- Fai provare la pagina a un collega e annota che cosa cambieresti: nel secondo incontro le
+  modifiche le fa l’agente, con git a fare da rete di sicurezza.
+- Ritrova il compito ripetitivo che hai descritto nella mail prima del corso: nel secondo
   incontro diventa una procedura che l’agente esegue sempre allo stesso modo.
