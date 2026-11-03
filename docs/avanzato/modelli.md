@@ -22,7 +22,7 @@ Si copia nella radice della cartella dell’archivio con il nome `AGENTS.md` e s
 le parti fra parentesi quadre. È pensato per un docente di materia non tecnica e resta sotto
 le trenta righe: ogni regola che aggiungi dovrebbe cambiare il risultato in un modo che puoi
 controllare. Il modo migliore per adattarlo è l’intervista qui sotto, seguita da una
-sfoltitura a mano. Si usa nell’[incontro 1](./incontro-1#il-file-di-istruzioni-agents-md).
+sfoltitura a mano. Si usa nell’[incontro 2](./incontro-2#il-file-di-istruzioni-agents-md).
 
 ```markdown
 # Archivio di [nome e cognome], [disciplina]
