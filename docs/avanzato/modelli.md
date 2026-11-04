@@ -1,12 +1,13 @@
 # Modelli pronti
 
-File da copiare nel proprio archivio e adattare alla propria disciplina. Ogni modello indica
+File da copiare nella propria cartella di lavoro e adattare alla propria disciplina. Ogni modello indica
 in quale incontro si usa.
 
 | Modello | Che cosa serve | Incontro |
 |---|---|---|
-| File di istruzioni di partenza | Il primo AGENTS.md dell’archivio, da sfoltire a mano | 1 |
+| File di istruzioni di partenza | Il primo AGENTS.md della pagina, da sfoltire a mano | 2 |
 | Procedura: intervista prima del piano | L’agente fa domande una alla volta prima di cominciare | 1, 3 |
+| Procedura: nuova pagina di esercizi | Una pagina autocorrettiva nuova, dello stesso tipo di quella pubblicata | 2 |
 | Procedura: domande di comprensione | Domande su tre livelli e soluzioni in un file separato | 2 |
 | Procedura: adattare un testo | Una lezione riscritta a un livello linguistico più semplice, con glossario | 2 |
 | Procedura: revisione della prosa | Un elenco di difetti da evitare che cresce a ogni correzione | 2 |
@@ -18,43 +19,52 @@ in quale incontro si usa.
 
 ## File di istruzioni di partenza
 
-Si copia nella radice della cartella dell’archivio con il nome `AGENTS.md` e si sostituiscono
+Si copia nella radice della cartella della pagina con il nome `AGENTS.md` e si sostituiscono
 le parti fra parentesi quadre. È pensato per un docente di materia non tecnica e resta sotto
 le trenta righe: ogni regola che aggiungi dovrebbe cambiare il risultato in un modo che puoi
 controllare. Il modo migliore per adattarlo è l’intervista qui sotto, seguita da una
 sfoltitura a mano. Si usa nell’[incontro 2](./incontro-2#il-file-di-istruzioni-agents-md).
 
 ```markdown
-# Archivio di [nome e cognome], [disciplina]
+# Pagine di esercizi di [nome e cognome], [disciplina]
 
 Insegno [disciplina] all’I.I.S. J. C. Maxwell, nelle classi [prime, terze…] di [indirizzo].
-Questa cartella contiene i miei materiali didattici: lezioni, verifiche, schede, griglie.
+Questa cartella è il repository di una pagina di esercizi interattivi per i miei studenti, ed è
+pubblicata in rete con GitHub Pages: tutto ciò che contiene è pubblico.
 
 ## Com’è fatta la cartella
 
-- `originali/`: i file come li ho scritti io (Word, PDF, presentazioni). Non si modificano.
-- `testi/`: le versioni in Markdown degli originali, con lo stesso nome. Si lavora su queste.
-- Un file per argomento; il nome comincia con la classe: `3-[argomento].md`.
+- `index.html`: la pagina. Un solo file, senza risorse esterne.
+- `materiali/`: i testi da cui ricavo gli esercizi. Non si modificano.
+- `.agents/skills/`: le procedure ripetibili.
 
 ## Come scrivere
 
-- Italiano, registro adatto a studenti di [età] anni; frasi brevi, niente gergo non spiegato.
-- Ogni scheda o verifica comincia con classe, argomento e durata prevista.
+- Italiano, registro adatto a studenti di [età] anni; consegne brevi, una richiesta per
+  esercizio, niente gergo non spiegato.
+- Ogni esercizio ha un titolo che dice che cosa si deve fare.
 - [Una regola della tua disciplina: per esempio, «le date sempre per esteso», «le citazioni
   sempre con autore e opera», «le formule sempre con unità di misura».]
+- La pagina deve funzionare da telefono: niente trascinamento, menu a tendina o pulsanti.
 
 ## Che cosa non fare mai
 
 - Non inserire nomi, voti o informazioni su studenti reali, nemmeno come esempio.
-- Non modificare né cancellare i file in `originali/`.
-- Non inventare fonti, date o citazioni: se un dato non è nei miei file, scrivi «da
+- Non modificare né cancellare i file in `materiali/`.
+- Non copiare testi di terzi per intero.
+- Non inventare fonti, date o citazioni: se un dato non è nei materiali, scrivi «da
   verificare».
+
+## Prima di fare un commit
+
+- Apri la differenza e dimmi quanti file sono cambiati e quali.
+- Il messaggio dice che cosa contiene il commit, in italiano.
 
 ## Quando un lavoro è finito
 
 - Elenca i file che hai creato o modificato.
 - Dimmi che cosa non sei riuscito a fare e perché.
-- Segnala ciò che devo controllare io prima di usarlo in classe.
+- Segnala ciò che devo controllare io prima di pubblicare.
 ```
 
 ## Intervista per il primo file di istruzioni
@@ -76,12 +86,72 @@ nient’altro.
 ## Procedure ripetibili
 
 Ogni procedura è una cartella con dentro un file `SKILL.md`. Si copia in `.agents/skills/`
-nella radice dell’archivio per Codex, in `.claude/skills/` per Claude Code (vedi
+nella radice della cartella di lavoro per Codex, in `.claude/skills/` per Claude Code (vedi
 [Codex e Claude Code](./codex-e-claude-code)). Le prime tre procedure qui sotto sono state provate il
 29 ottobre 2026 con Claude Code 2.1.312 sulle lezioni di storia della demo: sono partite tutte
 e tre da una richiesta che non le nominava. Si usano nell’[incontro 2](./incontro-2#le-procedure-ripetibili);
 le ultime due nell’[incontro 3](./incontro-3).
 Prima di adottarne una, sostituisci gli esempi con i tuoi e togli quello che non ti serve.
+
+### Nuova pagina di esercizi
+
+`.agents/skills/nuova-pagina-di-esercizi/SKILL.md`. Prova non ancora fatta: il testo è scritto sul modello delle procedure provate il 29 ottobre 2026 con Claude Code 2.1.312 e va provato in Codex e in Claude Code prima del 12 novembre.
+
+````markdown
+---
+name: nuova-pagina-di-esercizi
+description: Crea una nuova pagina web di esercizi interattivi (un solo file HTML, con correzione immediata) a partire da un materiale della cartella, dello stesso tipo della pagina già pubblicata. Usala quando il docente chiede una nuova pagina, una scheda o degli esercizi autocorrettivi su una lettura, una lezione o un argomento.
+---
+
+# Nuova pagina di esercizi da un materiale
+
+Procedura per passare da un materiale della cartella a una pagina di esercizi interattivi,
+nello stesso stile della pagina già presente.
+
+## Prima di cominciare
+
+- Il materiale di partenza è un file della cartella: se il docente non dice quale,
+  chiediglielo.
+- Se il docente non indica classe e tipo di esercizio, ricavali dalla pagina esistente o dal
+  materiale; se non bastano, chiedili con una sola domanda.
+- Leggi la pagina `index.html` esistente: la nuova ne riprende struttura, stile e pulsante
+  «Controlla».
+- Lavora solo sul contenuto del materiale. Non aggiungere informazioni che non contiene.
+
+## Gli esercizi
+
+Prepara da due a quattro esercizi, scelti tra: completamento, abbinamento, ordinamento,
+classificazione, scelta con spiegazione. Regole:
+
+- una sola richiesta per consegna, comprensibile a uno studente della classe indicata;
+- ogni esercizio ha un pulsante «Controlla» che segnala le risposte sbagliate e spiega
+  l’errore con una frase presa dal materiale;
+- la correzione accetta le risposte giuste scritte in modo diverso (maiuscole, accenti,
+  spazi), oppure l’esercizio non chiede di scrivere;
+- niente trascinamento: menu a tendina o pulsanti, perché la pagina deve funzionare da
+  telefono.
+
+## Il file da scrivere
+
+`<nome-del-materiale>.html` nella radice della cartella: un solo file, senza risorse
+esterne (niente script o font caricati da altri siti). Non modificare `index.html` né il
+materiale di partenza. Aggiungi nella pagina `index.html` un solo collegamento alla pagina
+nuova, se il docente lo chiede.
+
+## Prima di dire che hai finito
+
+Controlla, e scrivi nel messaggio finale l’esito di ogni punto:
+
+- gli esercizi sono quanti richiesti e ogni consegna ha una risposta corretta;
+- ogni soluzione e ogni spiegazione cita un passo che esiste davvero nel materiale
+  (rileggilo, non andare a memoria);
+- nel file non compaiono nomi di studenti né altri dati personali;
+- nessun testo di terzi è riprodotto per intero;
+- nel file non c’è nessun indirizzo `http` o `https` caricato come risorsa.
+
+Se un controllo non passa, correggi il file prima di rispondere. Nel messaggio finale elenca
+i file creati e ciò che il docente deve controllare prima di pubblicare.
+````
 
 ### Domande di comprensione
 

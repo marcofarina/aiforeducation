@@ -1,24 +1,20 @@
 # Incontro 2 — Insegnare un mestiere all’agente
 
-Nel primo incontro l’agente ha costruito una pagina a partire dai tuoi materiali. In questo
-impara a lavorare sempre allo stesso modo. Prima servono due cose: un file di istruzioni che
-l’agente rilegge a ogni sessione, perché da solo non ricorda, e una rete di sicurezza, perché
-un agente che lavora su molti file può sbagliare su molti file. Il capitolo segue l’ordine
-dell’incontro: il contesto e il file di istruzioni, le versioni, dove va una regola, le
-procedure ripetibili, come sbaglia un agente e come si corregge, i connettori. In fondo trovi il laboratorio e che cosa fare prima
-del terzo incontro.
+Nel primo incontro l’agente ha costruito una pagina a partire dai tuoi materiali e l’hai
+pubblicata. In questo l’agente impara a lavorare sempre allo stesso modo sulla tua pagina.
+Prima servono due cose: un file di istruzioni che l’agente rilegge a ogni sessione, perché da
+solo non ricorda, e una rete di sicurezza, perché un agente che modifica molte parti di una
+pagina può sbagliare in molti punti. Il capitolo segue l’ordine dell’incontro: il contesto e
+il file di istruzioni, le versioni e il collegamento con la pagina in rete, dove va una regola,
+le procedure ripetibili, come sbaglia un agente e come si corregge, i connettori. In fondo
+trovi il laboratorio e che cosa fare prima del terzo incontro.
 
-Le prove citate qui sono state fatte il 29 ottobre 2026 con Claude Code 2.1.312, sull’archivio
-di una docente di storia di fantasia, Laura Bianchi: le stesse lezioni sulla Rivoluzione
-francese del primo incontro. La prova con l’app Codex e la licenza della scuola non è ancora
-stata fatta. Dove il capitolo descrive Codex, la fonte è la documentazione ufficiale, citata
-con la data in cui è stata consultata.
-
-::: warning Capitolo in revisione
-Il capitolo è stato scritto sul programma del 27 ottobre, in cui il primo incontro costruiva
-l’archivio. Con il programma del 3 novembre l’incontro 2 lavora sulla pagina pubblicata nel
-primo: esempi e laboratorio vanno adattati prima del 12 novembre.
-:::
+Le prove citate nel capitolo sono state fatte il 29 ottobre 2026 con Claude Code 2.1.312,
+sull’archivio di una docente di storia di fantasia, Laura Bianchi: le stesse lezioni sulla
+Rivoluzione francese del primo incontro. Le procedure descritte sono le stesse che userai sulla
+tua pagina, ma i passi sulla pagina e sul repository di GitHub, e la prova con l’app Codex e la
+licenza della scuola, non sono ancora stati fatti: dove il capitolo descrive Codex, la fonte è
+la documentazione ufficiale, citata con la data in cui è stata consultata.
 
 ## Il contesto come risorsa finita
 
@@ -54,14 +50,18 @@ lezione 2).
 I file si possono **annidare**. Codex legge l’`AGENTS.md` della radice del progetto e poi
 quelli delle sottocartelle, fino alla cartella in cui lavora, e li mette in fila dal
 generale al particolare: le regole più vicine al lavoro vengono per ultime e prevalgono.
-Così `archivio/AGENTS.md` dice chi sei e come scrivi, e `archivio/verifiche/AGENTS.md`
-aggiunge solo le regole delle verifiche. Il totale caricato ha un limite, 32 KiB per
+Così `AGENTS.md` nella radice dice chi sei e come scrivi, e `verifiche/AGENTS.md` aggiunge
+solo le regole delle verifiche. Il totale caricato ha un limite, 32 KiB per
 impostazione predefinita, cioè una decina di pagine: un motivo in più per scrivere corto.
 Fonte: [documentazione di Codex su AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md),
 consultata il 29 ottobre 2026.
 
 Un modello di partenza per un docente di materia non tecnica è nei
 [modelli pronti](./modelli#file-di-istruzioni-di-partenza).
+
+Un’avvertenza che vale per la tua pagina: il repository che hai creato nel primo incontro è
+**pubblico**, quindi `AGENTS.md` lo diventa quando lo carichi. Non ci vanno nomi di studenti,
+classi riconoscibili né altri dati personali.
 
 ### Chi scrive la memoria
 
@@ -140,6 +140,30 @@ Due regole pratiche. Il commit si fa **prima** di un compito ampio, non dopo: è
 si stende sotto, non la foto ricordo. E una modifica che non è mai entrata in un commit, una
 volta annullata, non si recupera più: l’agente stesso lo ha ricordato nella prova.
 
+### Dalla cartella alla pagina in rete: clone e push
+
+La pagina del primo incontro vive in due posti: il repository su GitHub, che Pages pubblica, e,
+da oggi, una cartella sul tuo computer. Due parole bastano a collegarli:
+
+- **clonare** un repository vuol dire portarne una copia completa sul computer, con tutta la
+  storia dei commit; la cartella che ne nasce sa da dove viene;
+- il **push** carica sul repository di GitHub i commit fatti sul computer. Appena il push è
+  arrivato, Pages ripubblica la pagina: dopo uno o due minuti l’indirizzo in rete mostra la
+  versione nuova.
+
+Il ciclo di lavoro diventa quindi: modifica con l’agente, leggi la differenza, commit, push.
+Per l’agente, clone e push sono comandi che hanno bisogno della rete, e la sandbox di Codex
+la tiene spenta per impostazione predefinita: l’app chiede il permesso di eseguirli, e tu lo
+concedi per quel comando. Fonte:
+[documentazione di Codex sui permessi](https://learn.chatgpt.com/docs/agent-approvals-security),
+consultata il 4 novembre 2026. Come il computer si accredita presso GitHub per il push
+(credenziali già presenti, interfaccia a riga di comando di GitHub, GitHub Desktop) dipende
+dal sistema e va provato su macOS e su Windows: la strada giusta per il corso sarà scritta nel
+laboratorio dopo le prove.
+
+I comandi git di questo capitolo (clone, ripristino, commit, annullamento di un commit, push)
+sono stati eseguiti il 4 novembre 2026 con git 2.54 su macOS contro un repository di prova.
+
 ::: warning Da verificare in aula
 La documentazione di Codex dice che una cartella sotto git si apre con il permesso di
 modificare i file al suo interno, mentre una cartella qualsiasi si apre in sola lettura
@@ -178,7 +202,7 @@ prosa di una comunicazione alle famiglie. Sta in una cartella con il suo nome e 
 sempre `SKILL.md`:
 
 ```text
-archivio/
+pagina/
 └── .agents/
     └── skills/
         └── domande-di-comprensione/
@@ -192,7 +216,7 @@ dai passi della procedura e dai controlli finali:
 ---
 name: domande-di-comprensione
 description: Prepara una batteria di domande di comprensione, con le soluzioni in un
-  file separato, a partire da un testo dell’archivio (lettura, lezione, brano
+  file separato, a partire da un testo della cartella (lettura, lezione, brano
   d’antologia). Usala quando il docente chiede domande, esercizi o una verifica di
   comprensione su un testo preciso.
 ---
@@ -324,8 +348,8 @@ un’istruzione: serve che tu controlli, e i controlli finali servono a dirti do
 ## Le procedure si condividono
 
 Il formato `SKILL.md`, con nome e descrizione in cima e istruzioni in Markdown, è uno standard
-aperto: lo leggono Codex, Claude Code e altri agenti. Una procedura scritta per il tuo archivio
-funziona anche nell’archivio di un collega, e un dipartimento può tenere una libreria comune
+aperto: lo leggono Codex, Claude Code e altri agenti. Una procedura scritta per la tua pagina
+funziona anche nel repository di un collega, e un dipartimento può tenere una libreria comune
 di procedure (le domande di comprensione, la griglia di correzione, l’adattamento per i piani
 personalizzati) che ognuno copia e adatta.
 
@@ -383,69 +407,73 @@ indicatori tradotti in cose da saper fare sulla lezione e la durata dell’inter
 «da verificare». È un esempio di connettore in sola lettura, ed è anche un esempio di come si
 configura per tentativi: la prima prova serve a capire che cosa il connettore vede.
 
-## Laboratorio: il primo file di istruzioni
+## Laboratorio
 
-In una conversazione nuova, chiedi all’agente di intervistarti prima di scrivere
-`AGENTS.md`:
+::: warning Procedura non ancora provata con Codex
+I comandi git sono stati eseguiti il 4 novembre 2026 su un repository di prova. L’accesso a
+GitHub dal portatile, il comportamento di Codex sulla cartella versionata e le due procedure
+in Codex non sono ancora stati provati: quando lo saranno, qui compariranno la data e la
+versione dell’app.
+:::
+
+Il laboratorio ha quattro parti, sulla pagina che hai pubblicato nel primo incontro.
+
+**Parte 1, il repository e il primo ripristino.** Clona sul computer il repository della
+pagina (dal pulsante verde **Code** di GitHub, scheda HTTPS, copia l’indirizzo) chiedendo a
+Codex di clonarlo in Documenti, e concedi il permesso di rete quando lo chiede. Controlla che
+il nome dei commit sia il tuo. Chiedi una modifica ampia alla pagina, ma prima chiedi il piano
+e leggilo («dimmi quali parti pensi di modificare e come, non modificare niente finché non ti
+rispondo»). Guarda la differenza, apri la pagina nel browser, poi annulla tutto. Ripeti con una
+modifica piccola e salvala con un commit.
+
+**Parte 2, il file di istruzioni.** In una conversazione nuova, chiedi all’agente di
+intervistarti prima di scrivere `AGENTS.md`:
 
 ```text
 Voglio scrivere il file AGENTS.md di questa cartella, con le istruzioni che dovrai
 seguire ogni volta che lavori qui. Prima intervistami: fammi una domanda alla volta e
 aspetta la mia risposta, al massimo dieci domande. Chiedimi che cosa insegno e a quali
-classi, che cosa contiene la cartella e come è organizzata, come voglio i testi che
-produci, che cosa non devi fare mai, come capisco che un lavoro è finito. Guarda i file
-della cartella prima di fare domande a cui puoi rispondere da solo. Alla fine scrivi
-AGENTS.md nella radice della cartella, al massimo trenta righe, e non modificare
+classi, che cosa contiene la cartella e come è organizzata, come voglio le pagine di
+esercizi che produci, che cosa non devi fare mai, come capisco che un lavoro è finito.
+Guarda i file della cartella prima di fare domande a cui puoi rispondere da solo. Alla fine
+scrivi AGENTS.md nella radice della cartella, al massimo trenta righe, e non modificare
 nient’altro.
 ```
 
 Poi apri il file e sfoltiscilo a mano: via le righe che l’agente seguirebbe comunque, quelle
-troppo vaghe per controllarle, quelle ripetute. Aggiungi almeno una regola che si vede subito
-nel risultato, per esempio «ogni scheda comincia con classe e argomento». Infine prova il file
-in una conversazione nuova: chiedi all’agente che cosa sa della cartella, poi un compito
-piccolo che metta alla prova quella regola. Se non la rispetta, correggi il file, non la
-richiesta.
+troppo vaghe per controllarle, quelle ripetute. Ricorda che il repository è pubblico. Aggiungi
+almeno una regola che si vede subito nel risultato, per esempio «ogni esercizio ha un titolo che
+dice che cosa si deve fare». Infine prova il file in una conversazione nuova: chiedi
+all’agente che cosa sa della cartella, poi un compito piccolo che metta alla prova quella
+regola. Se non la rispetta, correggi il file, non la richiesta. Fai un commit.
 
 L’intervista prima del lavoro è un’idea che torna nel terzo incontro, e che usano anche gli
 autori degli strumenti: farsi fare domande una alla volta fa emergere quello che non si era
 pensato di dire.
 
-## Laboratorio: due procedure sul proprio archivio
-
-::: warning Procedura non ancora provata con Codex
-I passi sono stati provati il 29 ottobre 2026 con Claude Code 2.1.312. La prova con l’app
-Codex e la licenza della scuola non è ancora stata fatta: quando lo sarà, qui compariranno la
-data e la versione dell’app.
-:::
-
-**Parte A, la rete di sicurezza.** Apri `archivio` e chiedi all’agente di metterlo sotto git
-con un primo commit, con il prompt della prima sezione. Controlla che il commit sia a tuo nome.
-Chiedi una piccola modifica a due o tre file, poi «mostrami le differenze rispetto all’ultimo
-commit», poi annullala e controlla che i file siano tornati com’erano.
-
-**Parte B, la procedura del tuo compito ripetitivo.** In una conversazione nuova fai svolgere
-all’agente, una volta, il compito che hai portato, su un file vero dell’archivio, e correggilo
-a voce finché il risultato non ti soddisfa. Poi chiedigli di trasformarlo in una procedura con
-il prompt della sezione [Farsi scrivere la procedura dall’agente](#farsi-scrivere-la-procedura-dall-agente).
+**Parte 3, una procedura per il tuo compito.** In una conversazione nuova fai svolgere
+all’agente, una volta, il compito ripetitivo che hai portato, su un file vero, e correggilo a
+voce finché il risultato non ti soddisfa. Poi chiedigli di trasformarlo in una procedura con il
+prompt della sezione [Farsi scrivere la procedura dall’agente](#farsi-scrivere-la-procedura-dall-agente).
 Leggi il `SKILL.md`, sfoltiscilo, controlla che finisca con almeno un controllo verificabile.
 Provalo in una conversazione nuova chiedendo lo stesso compito su un altro file, senza nominare
 la procedura. Se non parte, correggi la descrizione; se parte ma sbaglia, correggi la
-procedura. Alla fine un commit.
+procedura. Se non hai un compito, parti da una delle procedure dei
+[modelli pronti](./modelli#procedure-ripetibili): `nuova-pagina-di-esercizi` o
+`adattare-un-testo`. Fai un commit.
 
-**Parte C, la revisione della prosa.** Copia nell’archivio la procedura
-[revisione della prosa](./modelli#revisione-della-prosa) con il suo elenco di difetti. Aggiungi
-a mano un difetto tuo. Falla girare su un tuo testo per studenti o famiglie, poi segnala un
-difetto che l’elenco non prevede e chiedi all’agente di fare in modo che non succeda più.
-Controlla che l’elenco sia cresciuto di una voce scritta come regola generale. Nella prova, alla
-segnalazione «“Nell’ambito del percorso di storia” è un giro di parole, basta “Per storia”»,
-l’agente ha corretto la frase e aggiunto la voce «Giri di parole al posto di una preposizione o
-di una parola sola», con l’esempio. Alla fine un commit.
+**Parte 4, la pagina aggiornata in rete.** Usa la procedura per migliorare la pagina, controlla
+la differenza, fai il commit e il push (concedendo di nuovo il permesso di rete). Dopo uno o
+due minuti l’indirizzo mostra la versione nuova: aprila dal telefono.
+
+La traccia passo per passo, con il piano B e gli errori più frequenti, è nel laboratorio
+dell’incontro 2 del repository dei corsi.
 
 ## Prima del prossimo incontro
 
-- Usa le tue due procedure almeno una volta ciascuna su materiali diversi. Ogni volta che
-  sbagliano, correggi la procedura e fai un commit con un messaggio che dica che cosa hai
-  cambiato.
-- Aggiungi a `difetti.md` ogni difetto che ti trovi a correggere a mano.
-- Crea l’account GitHub, se non l’hai ancora fatto: nel terzo incontro pubblichiamo una parte
-  dell’archivio.
+- Usa la tua procedura almeno una volta su un file diverso. Ogni volta che sbaglia, correggi
+  la procedura e fai un commit con un messaggio che dica che cosa hai cambiato.
+- Porta in aula, per il terzo incontro, i materiali che vuoi riunire nell’archivio personale:
+  una cartella con una decina di file, nessun dato di studenti.
+- Se non l’hai ancora fatto, completa il push della pagina aggiornata e manda l’indirizzo a
+  Marco.
